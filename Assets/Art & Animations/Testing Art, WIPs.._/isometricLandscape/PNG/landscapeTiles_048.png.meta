@@ -143,7 +143,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      landscapeTiles_048_0: 4914359216592652401
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
