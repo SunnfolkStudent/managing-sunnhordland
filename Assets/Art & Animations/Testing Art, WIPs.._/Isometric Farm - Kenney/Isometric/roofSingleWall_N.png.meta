@@ -143,7 +143,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      roofSingleWall_N_0: 3711203637104211811
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

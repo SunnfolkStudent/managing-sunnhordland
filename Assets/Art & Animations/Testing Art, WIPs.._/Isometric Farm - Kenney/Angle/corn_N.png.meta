@@ -167,7 +167,9 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      corn_N_0: 8833723521520653188
+      corn_N_1: -2866662725263830450
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
