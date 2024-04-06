@@ -143,7 +143,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      woodWallCross_S_0: 268098512671998157
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

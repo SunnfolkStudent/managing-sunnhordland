@@ -215,7 +215,11 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      cornYoung_E_0: -811802812376738806
+      cornYoung_E_1: -4491475453512829101
+      cornYoung_E_2: -7927869018899293658
+      cornYoung_E_3: 7772913430496495793
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

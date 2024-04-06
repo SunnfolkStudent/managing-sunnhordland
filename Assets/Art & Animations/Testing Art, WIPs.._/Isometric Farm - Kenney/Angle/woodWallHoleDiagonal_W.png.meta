@@ -143,7 +143,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      woodWallHoleDiagonal_W_0: 7543757205857199879
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
