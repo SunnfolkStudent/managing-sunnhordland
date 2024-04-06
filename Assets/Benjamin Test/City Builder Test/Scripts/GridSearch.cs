@@ -2,7 +2,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Benjamin_Test.City_Builder_Test.Scripts;
 using UnityEngine;
+using Grid = Benjamin_Test.City_Builder_Test.Scripts.Grid;
 
 /// <summary>
 /// Source https://github.com/lordjesus/Packt-Introduction-to-graph-algorithms-for-game-developers
