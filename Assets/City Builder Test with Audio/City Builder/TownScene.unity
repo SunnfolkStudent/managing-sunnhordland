@@ -22675,7 +22675,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   placementManager: {fileID: 1636090581}
   temporaryPlacementPositions: []
-  roadStraight: {fileID: 5661862354351878554, guid: 0cf01c743836d154eb47042e1bc62afd, type: 3}
+  roadPositionToRecheck: []
+  roadFixer: {fileID: 0}
 --- !u!4 &2079287876
 Transform:
   m_ObjectHideFlags: 0
