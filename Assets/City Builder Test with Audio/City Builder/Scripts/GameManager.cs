@@ -10,17 +10,50 @@ namespace City_Builder_Test_with_Audio.City_Builder.Scripts
         public RoadManager roadManager;
         public InputManager inputManager;
 
+        public UIController uiController;
+
+        public StructureManager structureManager;
+
         private void Start()
         {
+            uiController.OnRoadPlacement += RoadPlacementHandler;
+            uiController.OnHousePlacement += HousePlacementHandler;
+            uiController.OnSpecialPlacement += SpecialPlacementHandler;
+            uiController.OnBigStructurePlacement += BigStructurePlacementHandler;
+        }
+
+        private void BigStructurePlacementHandler()
+        {
+            ClearInputActions();
+            inputManager.OnMouseClick += structureManager.PlaceBigStructure;
+        }
+
+        private void SpecialPlacementHandler()
+        {
+            ClearInputActions();
+            inputManager.OnMouseClick += structureManager.PlaceSpecial;
+        }
+
+        private void HousePlacementHandler()
+        {
+            ClearInputActions();
+            inputManager.OnMouseClick += structureManager.PlaceHouse;
+        }
+
+        private void RoadPlacementHandler()
+        {
+            ClearInputActions();
+            
             inputManager.OnMouseClick += roadManager.PlaceRoad;
             inputManager.OnMouseHold += roadManager.PlaceRoad;
             inputManager.OnMouseUp += roadManager.FinishPlacingRoad;
         }
 
-        private void HandleMouseClick(Vector3Int position)
+        private void ClearInputActions()
         {
-            Debug.Log(position);
-            roadManager.PlaceRoad(position);
+            inputManager.OnMouseClick = null;
+            inputManager.OnMouseHold = null;
+            inputManager.OnMouseUp = null;
         }
 
         private void Update()

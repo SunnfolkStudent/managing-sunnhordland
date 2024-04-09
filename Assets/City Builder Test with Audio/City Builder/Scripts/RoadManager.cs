@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using Benjamin_Test.City_Builder_Test.Scripts;
 using SVS;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace City_Builder_Test_with_Audio.City_Builder.Scripts
 {
@@ -10,7 +11,7 @@ namespace City_Builder_Test_with_Audio.City_Builder.Scripts
         public PlacementManager placementManager;
 
         public List<Vector3Int> temporaryPlacementPositions = new List<Vector3Int>();
-        public List<Vector3Int> roadPositionToRecheck = new List<Vector3Int>();
+        [FormerlySerializedAs("roadPositionToRecheck")] public List<Vector3Int> roadPositionsToRecheck = new List<Vector3Int>();
 
         private Vector3Int _startPosition;
         private bool _placementMode = false;
@@ -31,7 +32,7 @@ namespace City_Builder_Test_with_Audio.City_Builder.Scripts
             if (_placementMode == false)
             {
                 temporaryPlacementPositions.Clear();
-                roadPositionToRecheck.Clear();
+                roadPositionsToRecheck.Clear();
                 _placementMode = true;
                 _startPosition = position;
                 temporaryPlacementPositions.Add(position);
@@ -41,13 +42,21 @@ namespace City_Builder_Test_with_Audio.City_Builder.Scripts
             {
                 placementManager.RemoveAllTemporaryStructures();
                 temporaryPlacementPositions.Clear();
-                roadPositionToRecheck.Clear();
+
+                foreach (var positionsToFix in roadPositionsToRecheck)
+                {
+                    roadFixer.FixRoadAtPosition(placementManager, positionsToFix);
+                }
+                
+                roadPositionsToRecheck.Clear();
 
                 temporaryPlacementPositions = placementManager.GetPathBetween(_startPosition, position);
 
                 foreach (var temporaryPosition in temporaryPlacementPositions)
                 {
-                    placementManager.PlaceTemporaryStructure(position, roadFixer.deadEnd, CellType.Road);
+                    if (placementManager.CheckIfPositionIsFree(temporaryPosition) == false)
+                        return;
+                    placementManager.PlaceTemporaryStructure(temporaryPosition, roadFixer.deadEnd, CellType.Road);
                 }
             }
             
@@ -63,14 +72,14 @@ namespace City_Builder_Test_with_Audio.City_Builder.Scripts
                 // TODO: The below foreach loop can be refactored (See comment on road.bugfix 3 video):
                 foreach (var roadPosition in neighbours)
                 {
-                    if (roadPositionToRecheck.Contains(roadPosition) == false)
+                    if (roadPositionsToRecheck.Contains(roadPosition) == false)
                     {
-                        roadPositionToRecheck.Add(roadPosition);
+                        roadPositionsToRecheck.Add(roadPosition);
                     }
                 }
             }
 
-            foreach (var positionToFix in roadPositionToRecheck)
+            foreach (var positionToFix in roadPositionsToRecheck)
             {
                 roadFixer.FixRoadAtPosition(placementManager, positionToFix);
             }
