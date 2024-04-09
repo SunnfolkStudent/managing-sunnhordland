@@ -3,8 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Benjamin_Test.City_Builder_Test.Scripts;
+using City_Builder_Test_with_Audio.City_Builder.Scripts;
 using UnityEngine;
-using Grid = Benjamin_Test.City_Builder_Test.Scripts.Grid;
+using Grid = City_Builder_Test_with_Audio.City_Builder.Scripts.Grid;
 
 /// <summary>
 /// Source https://github.com/lordjesus/Packt-Introduction-to-graph-algorithms-for-game-developers

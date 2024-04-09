@@ -1,9 +1,8 @@
 using System;
 using System.Collections.Generic;
-using NUnit.Framework;
 using UnityEngine;
 
-namespace Benjamin_Test.City_Builder_Test.Scripts
+namespace City_Builder_Test_with_Audio.City_Builder.Scripts
 {
     public class PlacementManager : MonoBehaviour
     {
@@ -72,13 +71,30 @@ namespace Benjamin_Test.City_Builder_Test.Scripts
         {
             var neighbourVertices =
                 _placementGrid.GetAdjacentCellsOfType(position.x, position.z, type);
-            List<Vector3Int> neighbours = new List<Vector3Int>();
+            var neighbours = new List<Vector3Int>();
+            
+            // TODO: The below foreach loop can be refactored (See comment on road.bugfix 3 video):
             foreach (var point in neighbourVertices)
             {
                 neighbours.Add(new Vector3Int(point.X, 0, point.Y));
             }
 
             return neighbours;
+        }
+
+        public void RemoveAllTemporaryStructures()
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Vector3Int> GetPathBetween(Vector3Int startPosition, Vector3Int position)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void AddTemporaryStructuresToStructureDictionary()
+        {
+            throw new NotImplementedException();
         }
     }
 }

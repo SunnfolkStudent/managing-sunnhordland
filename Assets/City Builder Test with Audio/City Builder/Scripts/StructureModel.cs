@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Benjamin_Test.City_Builder_Test.Scripts
+namespace City_Builder_Test_with_Audio.City_Builder.Scripts
 {
     public class StructureModel : MonoBehaviour
     {
