@@ -1,8 +1,9 @@
 using System;
 using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.Tilemaps;
 
-namespace UnityEngine
+namespace Unity_Test_Birk._External._2d_techdemos.Rule_Tiles.Scripts
 {
     public class RuleTile<T> : RuleTile
     {

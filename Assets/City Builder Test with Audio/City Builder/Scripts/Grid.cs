@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Benjamin_Test.City_Builder_Test.Scripts
+namespace City_Builder_Test_with_Audio.City_Builder.Scripts
 {
     /// <summary>
     /// Source https://github.com/lordjesus/Packt-Introduction-to-graph-algorithms-for-game-developers

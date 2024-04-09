@@ -1,8 +1,8 @@
-using System;
+using Benjamin_Test.City_Builder_Test.Scripts;
 using SVS;
 using UnityEngine;
 
-namespace Benjamin_Test.City_Builder_Test.Scripts
+namespace City_Builder_Test_with_Audio.City_Builder.Scripts
 {
     public class GameManager : MonoBehaviour
     {
@@ -12,7 +12,9 @@ namespace Benjamin_Test.City_Builder_Test.Scripts
 
         private void Start()
         {
-            inputManager.OnMouseClick += HandleMouseClick;
+            inputManager.OnMouseClick += roadManager.PlaceRoad;
+            inputManager.OnMouseHold += roadManager.PlaceRoad;
+            inputManager.OnMouseUp += roadManager.FinishPlacingRoad;
         }
 
         private void HandleMouseClick(Vector3Int position)

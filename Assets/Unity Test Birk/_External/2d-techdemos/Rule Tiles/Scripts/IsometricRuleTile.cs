@@ -9,7 +9,7 @@ namespace UnityEngine
 
     [Serializable]
     [CreateAssetMenu(fileName = "New Isometric Rule Tile", menuName = "Tiles/Isometric Rule Tile")]
-    public class IsometricRuleTile : RuleTile
+    public class IsometricRuleTile : Unity_Test_Birk._External._2d_techdemos.Rule_Tiles.Scripts.RuleTile
     {
         // This has no differences with the RuleTile
     }

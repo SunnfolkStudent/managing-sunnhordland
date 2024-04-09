@@ -11,7 +11,7 @@ namespace UnityEngine
 
     [Serializable]
     [CreateAssetMenu(fileName = "New Hexagonal Rule Tile", menuName = "Tiles/Hexagonal Rule Tile")]
-    public class HexagonalRuleTile : RuleTile
+    public class HexagonalRuleTile : Unity_Test_Birk._External._2d_techdemos.Rule_Tiles.Scripts.RuleTile
     {
         private static readonly int[,] RotatedOrMirroredIndexes =
         {
