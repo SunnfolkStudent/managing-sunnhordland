@@ -16,3 +16,19 @@ PresetManager:
     - m_Preset: {fileID: 2655988077585873504, guid: 52fc3c7b1caf4e34394ca259409303fb, type: 2}
       m_Filter: student
       m_Disabled: 0
+  - first:
+      m_NativeTypeID: 114
+      m_ManagedTypePPtr: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+      m_ManagedTypeFallback: 
+    second:
+    - m_Preset: {fileID: 2655988077585873504, guid: e161058b116afde4490c51a2457c125f, type: 2}
+      m_Filter: 
+      m_Disabled: 0
+  - first:
+      m_NativeTypeID: 223
+      m_ManagedTypePPtr: {fileID: 0}
+      m_ManagedTypeFallback: 
+    second:
+    - m_Preset: {fileID: 2655988077585873504, guid: 21551a68b6c1a2245824bd01c4f90265, type: 2}
+      m_Filter: 
+      m_Disabled: 0
