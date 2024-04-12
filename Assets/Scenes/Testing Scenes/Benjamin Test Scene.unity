@@ -678,6 +678,10 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 424569439}
+    - target: {fileID: 4775051749022652233, guid: 8f888b70a81f6794fbc6f5cd8d63d427, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 424569439}
     - target: {fileID: 5597887760657699754, guid: 8f888b70a81f6794fbc6f5cd8d63d427, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -762,7 +766,8 @@ PrefabInstance:
       propertyPath: m_Radius
       value: 0.5
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2099363467134271460, guid: 8f888b70a81f6794fbc6f5cd8d63d427, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
