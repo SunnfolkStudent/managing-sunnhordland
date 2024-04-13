@@ -17794,8 +17794,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92fd9d1ffd1ad354fad7d1186eee3a34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  width: 15
-  height: 15
+  width: 20
+  height: 20
 --- !u!4 &1636090582
 Transform:
   m_ObjectHideFlags: 0
@@ -22983,7 +22983,7 @@ MonoBehaviour:
   placementManager: {fileID: 1636090581}
   temporaryPlacementPositions: []
   roadPositionsToRecheck: []
-  roadFixer: {fileID: 0}
+  roadFixer: {fileID: 2079287877}
 --- !u!4 &2079287876
 Transform:
   m_ObjectHideFlags: 0
