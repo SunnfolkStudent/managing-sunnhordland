@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-namespace NavMeshPlus_master.NavMeshPlus_master
+namespace People__Students_
 {
     public class Enemy : MonoBehaviour
     {
