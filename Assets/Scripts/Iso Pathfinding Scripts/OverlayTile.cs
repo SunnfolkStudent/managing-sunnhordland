@@ -2,19 +2,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using static finished3.ArrowTranslator;
 
-namespace finished3
+namespace Iso_Pathfinding_Scripts
 {
     public class OverlayTile : MonoBehaviour
     {
         public int G;
         public int H;
-        public int F { get { return G + H; } }
+        public int F => G + H;
 
         public bool isBlocked = false;
 
-        public OverlayTile Previous;
+        public OverlayTile previous;
         public Vector3Int gridLocation;
-        public Vector2Int grid2DLocation {get { return new Vector2Int(gridLocation.x, gridLocation.y); } }
+        public Vector2Int Grid2DLocation => new(gridLocation.x, gridLocation.y);
 
         public List<Sprite> arrows;
 

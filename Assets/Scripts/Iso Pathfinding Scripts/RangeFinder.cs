@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using Iso_Pathfinding_Scripts;
 using UnityEngine;
 
 namespace finished3
@@ -8,7 +9,7 @@ namespace finished3
     {
         public List<OverlayTile> GetTilesInRange(Vector2Int location, int range)
         {
-            var startingTile = MapManager.Instance.map[location];
+            var startingTile = MapManager.Instance.Map[location];
             var inRangeTiles = new List<OverlayTile>();
             int stepCount = 0;
 

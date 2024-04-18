@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Iso_Pathfinding_Scripts;
 using UnityEngine;
 
 namespace finished3
@@ -19,12 +20,12 @@ namespace finished3
             {
                 foreach (var item in inRangeTiles)
                 {
-                    searchableTiles.Add(item.grid2DLocation, MapManager.Instance.map[item.grid2DLocation]);
+                    searchableTiles.Add(item.Grid2DLocation, MapManager.Instance.Map[item.Grid2DLocation]);
                 }
             }
             else
             {
-                searchableTiles = MapManager.Instance.map;
+                searchableTiles = MapManager.Instance.Map;
             }
 
             openList.Add(start);
@@ -51,7 +52,7 @@ namespace finished3
                     tile.G = GetManhattenDistance(start, tile);
                     tile.H = GetManhattenDistance(end, tile);
 
-                    tile.Previous = currentOverlayTile;
+                    tile.previous = currentOverlayTile;
 
 
                     if (!openList.Contains(tile))
@@ -72,7 +73,7 @@ namespace finished3
             while (currentTile != start)
             {
                 finishedList.Add(currentTile);
-                currentTile = currentTile.Previous;
+                currentTile = currentTile.previous;
             }
 
             finishedList.Reverse();
@@ -87,7 +88,7 @@ namespace finished3
 
         private List<OverlayTile> GetNeightbourOverlayTiles(OverlayTile currentOverlayTile)
         {
-            var map = MapManager.Instance.map;
+            var map = MapManager.Instance.Map;
 
             List<OverlayTile> neighbours = new List<OverlayTile>();
 
