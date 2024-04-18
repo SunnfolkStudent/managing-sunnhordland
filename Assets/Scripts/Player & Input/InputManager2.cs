@@ -6,7 +6,10 @@ namespace Player___Input
     {
         [SerializeField] private Camera sceneCamera;
 
-        private Vector3 lastPosition;
+        private Vector3 _lastPosition;
+
+        [SerializeField]
+        private float testZDistanceFromPlane;
 
         [SerializeField] private LayerMask placementLayerMask;
 
@@ -18,10 +21,10 @@ namespace Player___Input
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit, 100, placementLayerMask))
             {
-                lastPosition = hit.point;
+                _lastPosition = hit.point - new Vector3(0, 0, testZDistanceFromPlane);
             }
 
-            return lastPosition;
+            return _lastPosition;
         }
     }
 }
