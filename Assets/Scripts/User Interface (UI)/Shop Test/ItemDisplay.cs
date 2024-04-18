@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SceneTemplate;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,9 +16,7 @@ public class ItemDisplay : MonoBehaviour
     public Text owned;
     public Text price;
 
-    private int numberOwned = 1;
-
-    private Dictionary<ShopItem, numberOwned>;
+    private Dictionary<ShopItem, int> _shopItemsInStock;
     
     // Start is called before the first frame update
     void Start()
@@ -27,5 +26,10 @@ public class ItemDisplay : MonoBehaviour
         artwork.sprite = item.artwork;
         owned.text = item.owned.ToString();
         price.text = item.price.ToString();
+    }
+
+    private int NumberOwnedOfItem(int itemAmount)
+    {
+        return itemAmount;
     }
 }
