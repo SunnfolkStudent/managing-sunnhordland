@@ -25,30 +25,33 @@ namespace Iso_Pathfinding_Scripts
                 _instance = this;
             }
         }
-
+        
         void Start()
         {
             var tileMaps = gameObject.transform.GetComponentsInChildren<Tilemap>().OrderByDescending(x => x.GetComponent<TilemapRenderer>().sortingOrder);
             Map = new Dictionary<Vector2Int, OverlayTile>();
 
-            foreach (var tm in tileMaps)
+            // Retrieves any tilemaps from children, and checks their bounds.
+            foreach (var tilemap in tileMaps)
             {
-                BoundsInt bounds = tm.cellBounds;
+                BoundsInt bounds = tilemap.cellBounds;
 
+                // We start with checking height (z), to avoid checking more tiles than we need to
                 for (int z = bounds.max.z; z > bounds.min.z; z--)
                 {
                     for (int y = bounds.min.y; y < bounds.max.y; y++)
                     {
                         for (int x = bounds.min.x; x < bounds.max.x; x++)
                         {
-                            if (tm.HasTile(new Vector3Int(x, y, z)))
+                            if (tilemap.HasTile(new Vector3Int(x, y, z)))
                             {
                                 if (!Map.ContainsKey(new Vector2Int(x, y)))
                                 {
                                     var overlayTile = Instantiate(overlayPrefab, overlayContainer.transform);
-                                    var cellWorldPosition = tm.GetCellCenterWorld(new Vector3Int(x, y, z));
+                                    var cellWorldPosition = tilemap.GetCellCenterWorld(new Vector3Int(x, y, z));
+                                    // We're increasing it by z + 1, cuz this is for creating overlays on top of tiles.
                                     overlayTile.transform.position = new Vector3(cellWorldPosition.x, cellWorldPosition.y, cellWorldPosition.z + 1);
-                                    overlayTile.GetComponent<SpriteRenderer>().sortingOrder = tm.GetComponent<TilemapRenderer>().sortingOrder;
+                                    overlayTile.GetComponent<SpriteRenderer>().sortingOrder = tilemap.GetComponent<TilemapRenderer>().sortingOrder;
                                     overlayTile.gameObject.GetComponent<OverlayTile>().gridLocation = new Vector3Int(x, y, z);
     
                                     Map.Add(new Vector2Int(x, y), overlayTile.gameObject.GetComponent<OverlayTile>());

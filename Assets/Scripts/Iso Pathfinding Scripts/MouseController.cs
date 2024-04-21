@@ -122,18 +122,19 @@ namespace Iso_Pathfinding_Scripts
             _character.standingOnTile = tile;
         }
 
+        // The "?" after RaycastHit2D makes it optional
         private static RaycastHit2D? GetFocusedOnTile()
         {
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            // Changing to Vector2, cuz we 2D isometric, not 3D.
             Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
 
+            // Using RaycastAll with a list, cuz it's more reliable in finding the right tile
             RaycastHit2D[] hits = Physics2D.RaycastAll(mousePos2D, Vector2.zero);
 
             if (hits.Length > 0)
             {
-                Debug.Log("Mouse has hit" + hits);
                 return hits.OrderByDescending(i => i.collider.transform.position.z).First();
-                
             }
 
             return null;

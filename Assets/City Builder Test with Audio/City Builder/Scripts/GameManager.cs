@@ -12,16 +12,16 @@ namespace City_Builder_Test_with_Audio.City_Builder.Scripts
         public RoadManager roadManager;
         public InputManager inputManager;
 
-        public UIController uiController;
+        public UIControllerSvs uiControllerSvs;
 
         public StructureManager structureManager;
 
         private void Start()
         {
-            uiController.OnRoadPlacement += RoadPlacementHandler;
-            uiController.OnHousePlacement += HousePlacementHandler;
-            uiController.OnSpecialPlacement += SpecialPlacementHandler;
-            uiController.OnBigStructurePlacement += BigStructurePlacementHandler;
+            uiControllerSvs.OnRoadPlacement += RoadPlacementHandler;
+            uiControllerSvs.OnHousePlacement += HousePlacementHandler;
+            uiControllerSvs.OnSpecialPlacement += SpecialPlacementHandler;
+            uiControllerSvs.OnBigStructurePlacement += BigStructurePlacementHandler;
         }
 
         private void BigStructurePlacementHandler()

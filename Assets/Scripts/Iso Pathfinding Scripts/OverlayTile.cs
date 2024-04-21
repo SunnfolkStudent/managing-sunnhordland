@@ -4,6 +4,14 @@ using static finished3.ArrowTranslator;
 
 namespace Iso_Pathfinding_Scripts
 {
+    public enum CellType
+    {
+        NoTile,
+        EmptyTile,
+        Road,
+        Building
+    }
+    
     public class OverlayTile : MonoBehaviour
     {
         public int G;
@@ -17,7 +25,6 @@ namespace Iso_Pathfinding_Scripts
         public Vector2Int Grid2DLocation => new(gridLocation.x, gridLocation.y);
 
         public List<Sprite> arrows;
-
 
         private void Update()
         {

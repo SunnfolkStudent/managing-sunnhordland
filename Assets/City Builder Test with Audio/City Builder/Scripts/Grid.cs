@@ -23,10 +23,9 @@ namespace City_Builder_Test_with_Audio.City_Builder.Scripts
             {
                 return false;
             }
-            if (obj is Point)
+            if (obj is Point point)
             {
-                Point p = obj as Point;
-                return this.X == p.X && this.Y == p.Y;
+                return this.X == point.X && this.Y == point.Y;
             }
             return false;
         }
@@ -78,10 +77,7 @@ namespace City_Builder_Test_with_Audio.City_Builder.Scripts
         // Adding index operator to our Grid class so that we can use grid[][] to access specific cell from our grid. 
         public CellType this[int i, int j]
         {
-            get
-            {
-                return _grid[i, j];
-            }
+            get => _grid[i, j];
             set
             {
                 if (value == CellType.Road)
