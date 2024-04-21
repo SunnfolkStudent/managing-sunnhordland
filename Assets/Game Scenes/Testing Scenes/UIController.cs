@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace City_Builder_Test_with_Audio.City_Builder.Scripts
+namespace Scenes.Testing_Scenes
 {
     public class UIController : MonoBehaviour
     {
-        public Action OnRoadPlacement, OnHousePlacement, OnSpecialPlacement, OnBigStructurePlacement;
+        public Action PlacingRoad, PlacingHouse, PlacingSpecial, PlacingBigStructure;
         public Button placeRoadButton, placeHouseButton, placeSpecialButton, placeBigStructureButton;
 
         public Color outlineColor;
@@ -21,28 +21,28 @@ namespace City_Builder_Test_with_Audio.City_Builder.Scripts
             {
                 ResetButtonColor();
                 ModifyOutline(placeRoadButton);
-                OnRoadPlacement?.Invoke();
+                PlacingRoad?.Invoke();
             });
             
             placeHouseButton.onClick.AddListener(() => 
             {
                 ResetButtonColor();
                 ModifyOutline(placeHouseButton);
-                OnHousePlacement?.Invoke();
+                PlacingHouse?.Invoke();
             });
             
             placeSpecialButton.onClick.AddListener(() =>
             {
                 ResetButtonColor();
                 ModifyOutline(placeSpecialButton);
-                OnSpecialPlacement?.Invoke();
+                PlacingSpecial?.Invoke();
             });
             
             placeBigStructureButton.onClick.AddListener(() =>
             {
                 ResetButtonColor();
                 ModifyOutline(placeBigStructureButton);
-                OnBigStructurePlacement?.Invoke();
+                PlacingBigStructure?.Invoke();
             });
             
         }
