@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 5c2dfeb55844042d692d9c310c521045
+guid: 7cfa508424b78402fa79d911048b9cd0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5098327985665551685
-    second: Untitled4641_20240422104847_0
-  - first:
-      213: 9118835062999724894
-    second: Untitled4641_20240422104847_1
+      213: -530311669124618200
+    second: Untitled4642_20240422111356_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -49,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -78,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -116,43 +113,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: left cloud
+      name: Untitled4642_20240422111356_0
       rect:
         serializedVersion: 2
-        x: 33
-        y: 0
-        width: 352
-        height: 259
+        x: 503
+        y: 38
+        width: 974
+        height: 1004
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bb2d8f985b91f39b0800000000000000
-      internalID: -5098327985665551685
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: right cloud
-      rect:
-        serializedVersion: 2
-        x: 1396
-        y: 6
-        width: 557
-        height: 326
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e53b9771d2c9c8e70800000000000000
-      internalID: 9118835062999724894
+      spriteID: 828259db854f3a8f0800000000000000
+      internalID: -530311669124618200
       vertices: []
       indices: 
       edges: []
@@ -168,8 +144,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      left cloud: -5098327985665551685
-      right cloud: 9118835062999724894
+      Untitled4642_20240422111356_0: -530311669124618200
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
