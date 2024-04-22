@@ -143,7 +143,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Dirt_block_for_tilemap_png_0: -832091027985372189
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
