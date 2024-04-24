@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using static Building.ArrowChanger;
-using BuildingInfo = Building.BuildingInfo;
 
 namespace Building
 {

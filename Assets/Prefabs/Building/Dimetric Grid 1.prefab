@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8995463777276705811}
   - component: {fileID: 3989517427543150289}
-  - component: {fileID: 5448611921517014760}
+  - component: {fileID: 6534005496957784001}
   m_Layer: 0
-  m_Name: Dimetric Grid
+  m_Name: Dimetric Grid 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,7 +46,7 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 3
   m_CellSwizzle: 0
---- !u!114 &5448611921517014760
+--- !u!114 &6534005496957784001
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -55,10 +55,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2600027952645223367}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ab13079363247e42a1f5dafb2a17d50, type: 3}
+  m_Script: {fileID: 11500000, guid: dee885aaf83004547baa656d072ea179, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  overlayPrefab: {fileID: 8236925022526955805, guid: 73590fb3461fae64cbaf3ebc4e72352b, type: 3}
+  overlayPrefab: {fileID: 0}
   overlayContainer: {fileID: 0}
 --- !u!1 &8042143250755937161
 GameObject:
