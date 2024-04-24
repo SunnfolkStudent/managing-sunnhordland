@@ -2,36 +2,36 @@
 using System.Linq;
 using UnityEngine;
 
-namespace Iso_Pathfinding_Scripts
+namespace Building
 {
-    public class PathFinder
+    public class DestinationFinder
     {
-        private Dictionary<Vector2Int, OverlayTile> _searchableTiles;
+        private Dictionary<Vector2Int, TileOverlay> _searchableTiles;
 
-        public List<OverlayTile> FindPath(OverlayTile start, OverlayTile end, List<OverlayTile> inRangeTiles)
+        public List<TileOverlay> FindPath(TileOverlay start, TileOverlay end, List<TileOverlay> inRangeTiles)
         {
-            _searchableTiles = new Dictionary<Vector2Int, OverlayTile>();
+            _searchableTiles = new Dictionary<Vector2Int, TileOverlay>();
 
-            List<OverlayTile> openList = new List<OverlayTile>();
-            HashSet<OverlayTile> closedList = new HashSet<OverlayTile>();
+            List<TileOverlay> openList = new List<TileOverlay>();
+            HashSet<TileOverlay> closedList = new HashSet<TileOverlay>();
 
             if (inRangeTiles.Count > 0)
             {
                 foreach (var item in inRangeTiles)
                 {
-                    _searchableTiles.Add(item.Grid2DLocation, MapManager.Instance.Map[item.Grid2DLocation]);
+                    _searchableTiles.Add(item.Grid2DLocation, GridManager.Instance.Map[item.Grid2DLocation]);
                 }
             }
             else
             {
-                _searchableTiles = MapManager.Instance.Map;
+                _searchableTiles = GridManager.Instance.Map;
             }
 
             openList.Add(start);
 
             while (openList.Count > 0)
             {
-                OverlayTile currentOverlayTile = openList.OrderBy(x => x.F).First();
+                TileOverlay currentOverlayTile = openList.OrderBy(x => x.F).First();
 
                 openList.Remove(currentOverlayTile);
                 closedList.Add(currentOverlayTile);
@@ -61,13 +61,13 @@ namespace Iso_Pathfinding_Scripts
                 }
             }
 
-            return new List<OverlayTile>();
+            return new List<TileOverlay>();
         }
 
-        private List<OverlayTile> GetFinishedList(OverlayTile start, OverlayTile end)
+        private List<TileOverlay> GetFinishedList(TileOverlay start, TileOverlay end)
         {
-            List<OverlayTile> finishedList = new List<OverlayTile>();
-            OverlayTile currentTile = end;
+            List<TileOverlay> finishedList = new List<TileOverlay>();
+            TileOverlay currentTile = end;
 
             while (currentTile != start)
             {
@@ -80,16 +80,16 @@ namespace Iso_Pathfinding_Scripts
             return finishedList;
         }
 
-        private int GetManhattanDistance(OverlayTile start, OverlayTile tile)
+        private int GetManhattanDistance(TileOverlay start, TileOverlay tile)
         {
             return Mathf.Abs(start.gridLocation.x - tile.gridLocation.x) + Mathf.Abs(start.gridLocation.y - tile.gridLocation.y);
         }
 
-        private List<OverlayTile> GetNeighbourOverlayTiles(OverlayTile currentOverlayTile)
+        private List<TileOverlay> GetNeighbourOverlayTiles(TileOverlay currentOverlayTile)
         {
-            var map = MapManager.Instance.Map;
+            var map = GridManager.Instance.Map;
 
-            List<OverlayTile> neighbours = new List<OverlayTile>();
+            List<TileOverlay> neighbours = new List<TileOverlay>();
 
             // right
             Vector2Int locationToCheck = new Vector2Int(

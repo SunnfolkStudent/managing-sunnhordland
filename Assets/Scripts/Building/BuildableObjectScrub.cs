@@ -11,6 +11,5 @@ namespace Building
         public Sprite itemImage;
         public Vector2Int itemTileSize;
         public int itemPrice;
-        public CellType cellType;
     }
 }

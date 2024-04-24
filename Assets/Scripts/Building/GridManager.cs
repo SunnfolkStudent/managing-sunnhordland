@@ -3,18 +3,18 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-namespace Iso_Pathfinding_Scripts
+namespace Building
 {
-    public class MapManager : MonoBehaviour
+    public class GridManager : MonoBehaviour
     {
         // Singleton MapManager   
-        private static MapManager _instance;
-        public static MapManager Instance => _instance;
+        private static GridManager _instance;
+        public static GridManager Instance => _instance;
 
         public GameObject overlayPrefab;
         public GameObject overlayContainer;
 
-        public Dictionary<Vector2Int, OverlayTile> Map;
+        public Dictionary<Vector2Int, TileOverlay> Map;
 
         private void Awake()
         {
@@ -31,7 +31,7 @@ namespace Iso_Pathfinding_Scripts
         void Start()
         {
             var tileMaps = gameObject.transform.GetComponentsInChildren<Tilemap>().OrderByDescending(x => x.GetComponent<TilemapRenderer>().sortingOrder);
-            Map = new Dictionary<Vector2Int, OverlayTile>();
+            Map = new Dictionary<Vector2Int, TileOverlay>();
 
             // Retrieves any tilemaps from children, and checks their bounds.
             foreach (var tilemap in tileMaps)
@@ -56,9 +56,9 @@ namespace Iso_Pathfinding_Scripts
                                     // We're increasing it by z + 1, cuz this is for creating overlays on top of tiles.
                                     overlayTile.transform.position = new Vector3(cellWorldPosition.x, cellWorldPosition.y, cellWorldPosition.z + 1);
                                     overlayTile.GetComponent<SpriteRenderer>().sortingOrder = tilemap.GetComponent<TilemapRenderer>().sortingOrder;
-                                    overlayTile.gameObject.GetComponent<OverlayTile>().gridLocation = new Vector3Int(x, y, z);
+                                    overlayTile.gameObject.GetComponent<TileOverlay>().gridLocation = new Vector3Int(x, y, z);
     
-                                    Map.Add(new Vector2Int(x, y), overlayTile.gameObject.GetComponent<OverlayTile>());
+                                    Map.Add(new Vector2Int(x, y), overlayTile.gameObject.GetComponent<TileOverlay>());
                                 }
                             }
                         }
@@ -67,9 +67,9 @@ namespace Iso_Pathfinding_Scripts
             }
         }
 
-        public List<OverlayTile> GetSurroundingTiles(Vector2Int originTile)
+        public List<TileOverlay> GetSurroundingTiles(Vector2Int originTile)
         {
-            var surroundingTiles = new List<OverlayTile>();
+            var surroundingTiles = new List<TileOverlay>();
 
 
             Vector2Int tileToCheck = new Vector2Int(originTile.x + 1, originTile.y);

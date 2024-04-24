@@ -2,28 +2,28 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-namespace Iso_Pathfinding_Scripts
+namespace Building
 {
-    public class RangeFinder
+    public class TileRadiusFinder
     {
-        public List<OverlayTile> GetTilesInRange(Vector2Int location, int range)
+        public List<TileOverlay> GetTilesInRange(Vector2Int location, int range)
         {
-            var startingTile = MapManager.Instance.Map[location];
-            var inRangeTiles = new List<OverlayTile>();
+            var startingTile = GridManager.Instance.Map[location];
+            var inRangeTiles = new List<TileOverlay>();
             int stepCount = 0;
 
             inRangeTiles.Add(startingTile);
 
             // Should contain the surroundingTiles of the previous step. 
-            var tilesForPreviousStep = new List<OverlayTile>();
+            var tilesForPreviousStep = new List<TileOverlay>();
             tilesForPreviousStep.Add(startingTile);
             while (stepCount < range)
             {
-                var surroundingTiles = new List<OverlayTile>();
+                var surroundingTiles = new List<TileOverlay>();
 
                 foreach (var item in tilesForPreviousStep)
                 {
-                    surroundingTiles.AddRange(MapManager.Instance.GetSurroundingTiles(new Vector2Int(item.gridLocation.x, item.gridLocation.y)));
+                    surroundingTiles.AddRange(GridManager.Instance.GetSurroundingTiles(new Vector2Int(item.gridLocation.x, item.gridLocation.y)));
                 }
 
                 inRangeTiles.AddRange(surroundingTiles);

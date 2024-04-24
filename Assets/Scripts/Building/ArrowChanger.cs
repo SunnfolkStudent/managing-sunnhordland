@@ -1,9 +1,8 @@
-using Iso_Pathfinding_Scripts;
 using UnityEngine;
 
-namespace finished3
+namespace Building
 {
-    public class ArrowTranslator
+    public class ArrowChanger
     {
         public enum ArrowDirection
         {
@@ -22,7 +21,7 @@ namespace finished3
             RightFinished = 12
         }
 
-        public ArrowDirection TranslateDirection(OverlayTile previousTile, OverlayTile currentTile, OverlayTile futureTile)
+        public ArrowDirection TranslateDirection(TileOverlay previousTile, TileOverlay currentTile, TileOverlay futureTile)
         {
             bool isFinal = futureTile == null;
 

@@ -1,10 +1,9 @@
 using System.Collections.Generic;
 using UnityEngine;
-using static finished3.ArrowTranslator;
 
-namespace Iso_Pathfinding_Scripts
+namespace Building
 {
-    public class OverlayTile : MonoBehaviour
+    public class TileOverlay : MonoBehaviour
     {
         public int G;
         public int H;
@@ -12,7 +11,7 @@ namespace Iso_Pathfinding_Scripts
 
         public bool isBlocked = false;
 
-        public OverlayTile previous;
+        public TileOverlay previous;
         public Vector3Int gridLocation;
         public Vector2Int Grid2DLocation => new(gridLocation.x, gridLocation.y);
 
@@ -36,9 +35,9 @@ namespace Iso_Pathfinding_Scripts
             gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
         }
 
-        public void SetSprite(ArrowDirection direction)
+        public void SetSprite(ArrowChanger.ArrowDirection direction)
         {
-            if (direction == ArrowDirection.None)
+            if (direction == ArrowChanger.ArrowDirection.None)
                 GetComponentsInChildren<SpriteRenderer>()[1].color = new Color(1, 1, 1, 0);
             else
             {
