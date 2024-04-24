@@ -59,14 +59,18 @@ namespace City_Builder_Test_with_Audio.City_Builder.Scripts
     public class Grid
     {
         private CellType[,] _grid;
+        
+        // We have private ints _width and _height, which other scrips can retrieve though the public ints Width and Height.
         private int _width;
-        public int Width { get { return _width; } }
+        public int Width => _width;
+        
         private int _height;
-        public int Height { get { return _height; } }
+        public int Height => _height;
 
         private List<Point> _roadList = new List<Point>();
         private List<Point> _specialStructure = new List<Point>();
 
+        // This method below asks for a grid, and returns one.
         public Grid(int width, int height)
         {
             _width = width;

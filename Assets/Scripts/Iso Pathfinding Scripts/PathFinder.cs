@@ -1,17 +1,16 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Iso_Pathfinding_Scripts;
 using UnityEngine;
 
-namespace finished3
+namespace Iso_Pathfinding_Scripts
 {
     public class PathFinder
     {
-        private Dictionary<Vector2Int, OverlayTile> searchableTiles;
+        private Dictionary<Vector2Int, OverlayTile> _searchableTiles;
 
         public List<OverlayTile> FindPath(OverlayTile start, OverlayTile end, List<OverlayTile> inRangeTiles)
         {
-            searchableTiles = new Dictionary<Vector2Int, OverlayTile>();
+            _searchableTiles = new Dictionary<Vector2Int, OverlayTile>();
 
             List<OverlayTile> openList = new List<OverlayTile>();
             HashSet<OverlayTile> closedList = new HashSet<OverlayTile>();
@@ -20,12 +19,12 @@ namespace finished3
             {
                 foreach (var item in inRangeTiles)
                 {
-                    searchableTiles.Add(item.Grid2DLocation, MapManager.Instance.Map[item.Grid2DLocation]);
+                    _searchableTiles.Add(item.Grid2DLocation, MapManager.Instance.Map[item.Grid2DLocation]);
                 }
             }
             else
             {
-                searchableTiles = MapManager.Instance.Map;
+                _searchableTiles = MapManager.Instance.Map;
             }
 
             openList.Add(start);
@@ -42,15 +41,15 @@ namespace finished3
                     return GetFinishedList(start, end);
                 }
 
-                foreach (var tile in GetNeightbourOverlayTiles(currentOverlayTile))
+                foreach (var tile in GetNeighbourOverlayTiles(currentOverlayTile))
                 {
                     if (tile.isBlocked || closedList.Contains(tile) || Mathf.Abs(currentOverlayTile.transform.position.z - tile.transform.position.z) > 1)
                     {
                         continue;
                     }
 
-                    tile.G = GetManhattenDistance(start, tile);
-                    tile.H = GetManhattenDistance(end, tile);
+                    tile.G = GetManhattanDistance(start, tile);
+                    tile.H = GetManhattanDistance(end, tile);
 
                     tile.previous = currentOverlayTile;
 
@@ -81,59 +80,59 @@ namespace finished3
             return finishedList;
         }
 
-        private int GetManhattenDistance(OverlayTile start, OverlayTile tile)
+        private int GetManhattanDistance(OverlayTile start, OverlayTile tile)
         {
             return Mathf.Abs(start.gridLocation.x - tile.gridLocation.x) + Mathf.Abs(start.gridLocation.y - tile.gridLocation.y);
         }
 
-        private List<OverlayTile> GetNeightbourOverlayTiles(OverlayTile currentOverlayTile)
+        private List<OverlayTile> GetNeighbourOverlayTiles(OverlayTile currentOverlayTile)
         {
             var map = MapManager.Instance.Map;
 
             List<OverlayTile> neighbours = new List<OverlayTile>();
 
-            //right
+            // right
             Vector2Int locationToCheck = new Vector2Int(
                 currentOverlayTile.gridLocation.x + 1,
                 currentOverlayTile.gridLocation.y
             );
 
-            if (searchableTiles.ContainsKey(locationToCheck))
+            if (_searchableTiles.ContainsKey(locationToCheck))
             {
-                neighbours.Add(searchableTiles[locationToCheck]);
+                neighbours.Add(_searchableTiles[locationToCheck]);
             }
 
-            //left
+            // left
             locationToCheck = new Vector2Int(
                 currentOverlayTile.gridLocation.x - 1,
                 currentOverlayTile.gridLocation.y
             );
 
-            if (searchableTiles.ContainsKey(locationToCheck))
+            if (_searchableTiles.ContainsKey(locationToCheck))
             {
-                neighbours.Add(searchableTiles[locationToCheck]);
+                neighbours.Add(_searchableTiles[locationToCheck]);
             }
 
-            //top
+            // top
             locationToCheck = new Vector2Int(
                 currentOverlayTile.gridLocation.x,
                 currentOverlayTile.gridLocation.y + 1
             );
 
-            if (searchableTiles.ContainsKey(locationToCheck))
+            if (_searchableTiles.ContainsKey(locationToCheck))
             {
-                neighbours.Add(searchableTiles[locationToCheck]);
+                neighbours.Add(_searchableTiles[locationToCheck]);
             }
 
-            //bottom
+            // bottom
             locationToCheck = new Vector2Int(
                 currentOverlayTile.gridLocation.x,
                 currentOverlayTile.gridLocation.y - 1
             );
 
-            if (searchableTiles.ContainsKey(locationToCheck))
+            if (_searchableTiles.ContainsKey(locationToCheck))
             {
-                neighbours.Add(searchableTiles[locationToCheck]);
+                neighbours.Add(_searchableTiles[locationToCheck]);
             }
 
             return neighbours;

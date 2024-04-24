@@ -7,6 +7,7 @@ namespace Iso_Pathfinding_Scripts
 {
     public class MapManager : MonoBehaviour
     {
+        // Singleton MapManager   
         private static MapManager _instance;
         public static MapManager Instance => _instance;
 
@@ -20,7 +21,8 @@ namespace Iso_Pathfinding_Scripts
             if (_instance != null && _instance != this)
             {
                 Destroy(gameObject);
-            } else
+            } 
+            else
             {
                 _instance = this;
             }
@@ -43,8 +45,10 @@ namespace Iso_Pathfinding_Scripts
                     {
                         for (int x = bounds.min.x; x < bounds.max.x; x++)
                         {
+                            // Checking if there are holes in the tilemap not accounted for.
                             if (tilemap.HasTile(new Vector3Int(x, y, z)))
                             {
+                                // If the map doesn't already have a key (Vector2Int) there, create one. 
                                 if (!Map.ContainsKey(new Vector2Int(x, y)))
                                 {
                                     var overlayTile = Instantiate(overlayPrefab, overlayContainer.transform);

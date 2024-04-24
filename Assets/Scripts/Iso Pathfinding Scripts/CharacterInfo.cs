@@ -1,7 +1,6 @@
-using Iso_Pathfinding_Scripts;
 using UnityEngine;
 
-namespace finished3
+namespace Iso_Pathfinding_Scripts
 {
     public class CharacterInfo : MonoBehaviour
     {

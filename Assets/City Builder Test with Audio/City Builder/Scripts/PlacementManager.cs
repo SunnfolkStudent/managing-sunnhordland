@@ -6,6 +6,7 @@ namespace City_Builder_Test_with_Audio.City_Builder.Scripts
 {
     public class PlacementManager : MonoBehaviour
     {
+        [Header("Grid:")]
         public int width, height;
         private Grid _placementGrid;
 

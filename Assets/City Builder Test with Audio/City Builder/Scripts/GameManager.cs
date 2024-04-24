@@ -1,5 +1,3 @@
-using Benjamin_Test.City_Builder_Test.Scripts;
-using Player___Input;
 using SVS;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -10,7 +8,7 @@ namespace City_Builder_Test_with_Audio.City_Builder.Scripts
     {
         public CameraMovement cameraMovement;
         public RoadManager roadManager;
-        public InputManager inputManager;
+        [FormerlySerializedAs("inputManager")] public InputManagerCityBuilder inputManagerCityBuilder;
 
         public UIControllerSvs uiControllerSvs;
 
@@ -27,40 +25,40 @@ namespace City_Builder_Test_with_Audio.City_Builder.Scripts
         private void BigStructurePlacementHandler()
         {
             ClearInputActions();
-            inputManager.OnMouseClick += structureManager.PlaceBigStructure;
+            inputManagerCityBuilder.OnMouseClick += structureManager.PlaceBigStructure;
         }
 
         private void SpecialPlacementHandler()
         {
             ClearInputActions();
-            inputManager.OnMouseClick += structureManager.PlaceSpecial;
+            inputManagerCityBuilder.OnMouseClick += structureManager.PlaceSpecial;
         }
 
         private void HousePlacementHandler()
         {
             ClearInputActions();
-            inputManager.OnMouseClick += structureManager.PlaceHouse;
+            inputManagerCityBuilder.OnMouseClick += structureManager.PlaceHouse;
         }
 
         private void RoadPlacementHandler()
         {
             ClearInputActions();
             
-            inputManager.OnMouseClick += roadManager.PlaceRoad;
-            inputManager.OnMouseHold += roadManager.PlaceRoad;
-            inputManager.OnMouseUp += roadManager.FinishPlacingRoad;
+            inputManagerCityBuilder.OnMouseClick += roadManager.PlaceRoad;
+            inputManagerCityBuilder.OnMouseHold += roadManager.PlaceRoad;
+            inputManagerCityBuilder.OnMouseUp += roadManager.FinishPlacingRoad;
         }
 
         private void ClearInputActions()
         {
-            inputManager.OnMouseClick = null;
-            inputManager.OnMouseHold = null;
-            inputManager.OnMouseUp = null;
+            inputManagerCityBuilder.OnMouseClick = null;
+            inputManagerCityBuilder.OnMouseHold = null;
+            inputManagerCityBuilder.OnMouseUp = null;
         }
 
         private void Update()
         {
-            cameraMovement.MoveCamera(new Vector3(inputManager.CameraMovementVector.x, 0, inputManager.CameraMovementVector.y));
+            cameraMovement.MoveCamera(new Vector3(inputManagerCityBuilder.CameraMovementVector.x, 0, inputManagerCityBuilder.CameraMovementVector.y));
         }
     }
 }

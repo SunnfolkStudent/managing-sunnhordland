@@ -4,14 +4,6 @@ using static finished3.ArrowTranslator;
 
 namespace Iso_Pathfinding_Scripts
 {
-    public enum CellType
-    {
-        NoTile,
-        EmptyTile,
-        Road,
-        Building
-    }
-    
     public class OverlayTile : MonoBehaviour
     {
         public int G;
@@ -44,14 +36,14 @@ namespace Iso_Pathfinding_Scripts
             gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
         }
 
-        public void SetSprite(ArrowDirection d)
+        public void SetSprite(ArrowDirection direction)
         {
-            if (d == ArrowDirection.None)
+            if (direction == ArrowDirection.None)
                 GetComponentsInChildren<SpriteRenderer>()[1].color = new Color(1, 1, 1, 0);
             else
             {
                 GetComponentsInChildren<SpriteRenderer>()[1].color = new Color(1, 1, 1, 1);
-                GetComponentsInChildren<SpriteRenderer>()[1].sprite = arrows[(int)d];
+                GetComponentsInChildren<SpriteRenderer>()[1].sprite = arrows[(int)direction];
                 GetComponentsInChildren<SpriteRenderer>()[1].sortingOrder = gameObject.GetComponent<SpriteRenderer>().sortingOrder;
             }
         }

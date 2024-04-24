@@ -1,9 +1,8 @@
 using System.Collections.Generic;
 using System.Linq;
-using Iso_Pathfinding_Scripts;
 using UnityEngine;
 
-namespace finished3
+namespace Iso_Pathfinding_Scripts
 {
     public class RangeFinder
     {
@@ -15,7 +14,7 @@ namespace finished3
 
             inRangeTiles.Add(startingTile);
 
-            //Should contain the surroundingTiles of the previous step. 
+            // Should contain the surroundingTiles of the previous step. 
             var tilesForPreviousStep = new List<OverlayTile>();
             tilesForPreviousStep.Add(startingTile);
             while (stepCount < range)

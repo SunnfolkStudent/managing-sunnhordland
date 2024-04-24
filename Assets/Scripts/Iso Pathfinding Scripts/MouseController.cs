@@ -3,7 +3,7 @@ using System.Linq;
 using finished3;
 using UnityEngine;
 using static finished3.ArrowTranslator;
-using CharacterInfo = finished3.CharacterInfo;
+using CharacterInfo = Iso_Pathfinding_Scripts.CharacterInfo;
 
 namespace Iso_Pathfinding_Scripts
 {
@@ -12,7 +12,7 @@ namespace Iso_Pathfinding_Scripts
         public GameObject cursor;
         public float speed;
         public GameObject characterPrefab;
-        public int movementRange = 3;
+        public int movementRange = 10;
         private CharacterInfo _character;
 
         private PathFinder _pathFinder;
@@ -20,7 +20,7 @@ namespace Iso_Pathfinding_Scripts
         private ArrowTranslator _arrowTranslator;
         private List<OverlayTile> _path;
         private List<OverlayTile> _rangeFinderTiles;
-        private bool _isMoving;
+        private bool _characterIsMoving;
 
         private void Start()
         {
@@ -29,7 +29,7 @@ namespace Iso_Pathfinding_Scripts
             _arrowTranslator = new ArrowTranslator();
 
             _path = new List<OverlayTile>();
-            _isMoving = false;
+            _characterIsMoving = false;
             _rangeFinderTiles = new List<OverlayTile>();
         }
 
@@ -43,7 +43,7 @@ namespace Iso_Pathfinding_Scripts
                 cursor.transform.position = tile.transform.position;
                 cursor.gameObject.GetComponent<SpriteRenderer>().sortingOrder = tile.transform.GetComponent<SpriteRenderer>().sortingOrder;
 
-                if (_rangeFinderTiles.Contains(tile) && !_isMoving)
+                if (_rangeFinderTiles.Contains(tile) && !_characterIsMoving)
                 {
                     _path = _pathFinder.FindPath(_character.standingOnTile, tile, _rangeFinderTiles);
 
@@ -74,19 +74,19 @@ namespace Iso_Pathfinding_Scripts
                     }
                     else
                     {
-                        _isMoving = true;
+                        _characterIsMoving = true;
                         tile.gameObject.GetComponent<OverlayTile>().HideTile();
                     }
                 }
             }
-            if (_path.Count > 0 && _isMoving)
+            if (_path.Count > 0 && _characterIsMoving)
             {
                 MoveAlongPath();
             }
             if (_path.Count == 0 && _character != null)
             {
                 GetInRangeTiles();
-                _isMoving = false;
+                _characterIsMoving = false;
             }
         }
 
@@ -122,7 +122,8 @@ namespace Iso_Pathfinding_Scripts
             _character.standingOnTile = tile;
         }
 
-        // The "?" after RaycastHit2D makes it optional
+        // The "?" after RaycastHit2D means that RaycastHit2D is Nullable
+        // It means it can return either a Vector2 from Raycast2D or null.
         private static RaycastHit2D? GetFocusedOnTile()
         {
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
