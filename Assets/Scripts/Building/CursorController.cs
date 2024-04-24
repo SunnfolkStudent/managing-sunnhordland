@@ -14,20 +14,20 @@ namespace Building
         private BuildingInfo _building;
 
         private DestinationFinder _destinationFinder;
-        private TileRadiusFinder _rangeFinder;
+        private TileRadiusFinder _tileRadiusFinder;
         private ArrowChanger _arrowChanger;
         private List<TileOverlay> _path;
         private List<TileOverlay> _tileRadiusFinderTiles;
-        private bool _characterIsMoving;
+        private bool _buildingProcessActive;
 
         private void Start()
         {
             _destinationFinder = new DestinationFinder();
-            _rangeFinder = new TileRadiusFinder();
+            _tileRadiusFinder = new TileRadiusFinder();
             _arrowChanger = new ArrowChanger();
 
             _path = new List<TileOverlay>();
-            _characterIsMoving = false;
+            _buildingProcessActive = false;
             _tileRadiusFinderTiles = new List<TileOverlay>();
         }
 
@@ -41,7 +41,7 @@ namespace Building
                 cursor.transform.position = tileOverlay.transform.position;
                 cursor.gameObject.GetComponent<SpriteRenderer>().sortingOrder = tileOverlay.transform.GetComponent<SpriteRenderer>().sortingOrder;
 
-                if (_tileRadiusFinderTiles.Contains(tileOverlay) && !_characterIsMoving)
+                if (_tileRadiusFinderTiles.Contains(tileOverlay) && !_buildingProcessActive)
                 {
                     _path = _destinationFinder.FindPath(_building.standingOnTile, tileOverlay, _tileRadiusFinderTiles);
 
@@ -68,23 +68,22 @@ namespace Building
                     {
                         _building = Instantiate(buildingPrefab).GetComponent<BuildingInfo>();
                         PositionCharacterOnLine(tileOverlay);
-                        GetInRangeTiles();
-                    }
-                    else
-                    {
-                        _characterIsMoving = true;
+                        _buildingProcessActive = true;
                         tileOverlay.gameObject.GetComponent<TileOverlay>().HideTile();
+                        _building = null;
+                        // GetInRangeTiles();
+                        // TODO: Exit build with current building.
                     }
                 }
             }
-            if (_path.Count > 0 && _characterIsMoving)
+            if (_path.Count > 0 && _buildingProcessActive)
             {
                 MoveAlongPath();
             }
             if (_path.Count == 0 && _building != null)
             {
                 GetInRangeTiles();
-                _characterIsMoving = false;
+                _buildingProcessActive = false;
             }
         }
 
@@ -141,7 +140,7 @@ namespace Building
 
         private void GetInRangeTiles()
         {
-            _tileRadiusFinderTiles = _rangeFinder.GetTilesInRange(new Vector2Int(_building.standingOnTile.gridLocation.x, _building.standingOnTile.gridLocation.y), movementRange);
+            _tileRadiusFinderTiles = _tileRadiusFinder.GetTilesInRange(new Vector2Int(_building.standingOnTile.gridLocation.x, _building.standingOnTile.gridLocation.y), movementRange);
 
             foreach (var item in _tileRadiusFinderTiles)
             {
