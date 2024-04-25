@@ -320,6 +320,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas (Settings Menu)
       objectReference: {fileID: 0}
+    - target: {fileID: 5218908437934784351, guid: efaebf3cf5f5b40c2a282b25e89d00ee, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5218908437934784351, guid: efaebf3cf5f5b40c2a282b25e89d00ee, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8419881374172422624, guid: efaebf3cf5f5b40c2a282b25e89d00ee, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -399,6 +407,10 @@ PrefabInstance:
     - target: {fileID: 8419881374172422624, guid: efaebf3cf5f5b40c2a282b25e89d00ee, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8995752413594780458, guid: efaebf3cf5f5b40c2a282b25e89d00ee, type: 3}
+      propertyPath: m_Color.a
+      value: 0.54509807
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
