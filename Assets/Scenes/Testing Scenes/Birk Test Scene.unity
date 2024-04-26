@@ -352,7 +352,7 @@ GameObject:
   - component: {fileID: 1924256748}
   - component: {fileID: 1924256750}
   m_Layer: 0
-  m_Name: student
+  m_Name: StudentWalkLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -438,7 +438,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 8389134475083476877, guid: 1001a6878ff664bd8980616ce3f87e37, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 58594ef701b44e945a8af4d18da8a061, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
