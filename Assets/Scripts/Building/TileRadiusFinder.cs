@@ -8,7 +8,7 @@ namespace Building
     {
         public List<TileOverlay> GetTilesInRange(Vector2Int location, int range)
         {
-            var startingTile = GridManager.Instance.Map[location];
+            var startingTile = GridManager.Instance.TileOverlayMap[location];
             var inRangeTiles = new List<TileOverlay>();
             int stepCount = 0;
 

@@ -1,53 +1,89 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using static Building.ArrowChanger;
+using UnityEngine.SceneManagement;
 
 namespace Building
 {
-    public class CursorController : MonoBehaviour
+    public class PlayerInputManager : MonoBehaviour
     {
+        // public Action<Vector2Int> OnMouseClick, OnMouseHold;
+        // public Action OnMouseUp;
+        
+        // private Vector2 _cameraMovementVector; 
+        // public Vector2 cameraMovementVector => _cameraMovementVector;
+        
         public GameObject cursor;
         public float speed;
         public GameObject buildingPrefab;
-        public int movementRange = 10;
+        public int movementRange = 3;
         private BuildingInfo _building;
 
         private DestinationFinder _destinationFinder;
         private TileRadiusFinder _tileRadiusFinder;
         private ArrowChanger _arrowChanger;
         private List<TileOverlay> _path;
-        private List<TileOverlay> _tileRadiusFinderTiles;
-        private bool _buildingProcessActive;
+        private List<TileOverlay> _rangeFinderTiles;
+        private Camera _camera;
+        
+        private Dictionary<GameObject, int> _placedBuildings = new Dictionary<GameObject, int>();
 
         private void Start()
         {
+            _camera = Camera.main;
             _destinationFinder = new DestinationFinder();
             _tileRadiusFinder = new TileRadiusFinder();
             _arrowChanger = new ArrowChanger();
 
             _path = new List<TileOverlay>();
-            _buildingProcessActive = false;
-            _tileRadiusFinderTiles = new List<TileOverlay>();
+            _rangeFinderTiles = new List<TileOverlay>();
         }
 
         void LateUpdate()
+        {
+            // CheckClickUpEvent();
+            // CheckClickHoldEvent();
+            // CheckKeyboardInput();
+            if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Benjamin Test 4"))
+            {
+                CheckClickDown();
+            }
+        }
+
+        /*private void CheckKeyboardInput()
+        {
+            _cameraMovementVector = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        }
+
+        private void CheckClickHoldEvent()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void CheckClickUpEvent()
+        {
+            throw new NotImplementedException();
+        }*/
+
+        private void CheckClickDown()
         {
             RaycastHit2D? hit = GetFocusedOnTile();
 
             if (hit.HasValue)
             {
-                TileOverlay tileOverlay = hit.Value.collider.gameObject.GetComponent<TileOverlay>();
-                cursor.transform.position = tileOverlay.transform.position;
-                cursor.gameObject.GetComponent<SpriteRenderer>().sortingOrder = tileOverlay.transform.GetComponent<SpriteRenderer>().sortingOrder;
+                TileOverlay tile = hit.Value.collider.gameObject.GetComponent<TileOverlay>();
+                cursor.transform.position = tile.transform.position;
+                cursor.gameObject.GetComponent<SpriteRenderer>().sortingOrder =
+                    tile.transform.GetComponent<SpriteRenderer>().sortingOrder;
 
-                if (_tileRadiusFinderTiles.Contains(tileOverlay) && !_buildingProcessActive)
+                if (_rangeFinderTiles.Contains(tile))
                 {
-                    _path = _destinationFinder.FindPath(_building.standingOnTile, tileOverlay, _tileRadiusFinderTiles);
+                    _path = _destinationFinder.FindPath(_building.standingOnTile, tile, _rangeFinderTiles);
 
-                    foreach (var item in _tileRadiusFinderTiles)
+                    foreach (var item in _rangeFinderTiles)
                     {
-                        GridManager.Instance.Map[item.Grid2DLocation].SetSprite(ArrowDirection.None);
+                        GridManager.Instance.TileOverlayMap[item.Grid2DLocation].SetSprite(ArrowChanger.ArrowDirection.None);
                     }
 
                     for (int i = 0; i < _path.Count; i++)
@@ -62,28 +98,16 @@ namespace Building
 
                 if (Input.GetMouseButtonDown(0))
                 {
-                    tileOverlay.ShowTile();
+                    tile.ShowTile();
 
-                    if (_building == null)
+                    if (tile.typeOfTheTile == TileType.Empty)
                     {
                         _building = Instantiate(buildingPrefab).GetComponent<BuildingInfo>();
-                        PositionCharacterOnLine(tileOverlay);
-                        _buildingProcessActive = true;
-                        tileOverlay.gameObject.GetComponent<TileOverlay>().HideTile();
-                        _building = null;
-                        // GetInRangeTiles();
-                        // TODO: Exit build with current building.
+                        PositionCharacterOnLine(tile);
+                        tile.gameObject.GetComponent<TileOverlay>().HideTile();
+                        tile.typeOfTheTile = TileType.Building;
                     }
                 }
-            }
-            if (_path.Count > 0 && _buildingProcessActive)
-            {
-                MoveAlongPath();
-            }
-            if (_path.Count == 0 && _building != null)
-            {
-                GetInRangeTiles();
-                _buildingProcessActive = false;
             }
         }
 
@@ -103,27 +127,21 @@ namespace Building
                 _path.RemoveAt(0);
             }
 
-            /*if (path.Count == 0)
-            {
-                GetInRangeTiles();
-                isMoving = false;
-            }*/
-
         }
 
-        private void PositionCharacterOnLine(TileOverlay overlayTile)
+        private void PositionCharacterOnLine(TileOverlay tile)
         {
-            var position = overlayTile.transform.position;
+            var position = tile.transform.position;
             _building.transform.position = new Vector3(position.x, position.y + 0.0001f, position.z);
-            _building.GetComponent<SpriteRenderer>().sortingOrder = overlayTile.GetComponent<SpriteRenderer>().sortingOrder;
-            _building.standingOnTile = overlayTile;
+            _building.GetComponent<SpriteRenderer>().sortingOrder = tile.GetComponent<SpriteRenderer>().sortingOrder;
+            _building.standingOnTile = tile;
         }
 
         // The "?" after RaycastHit2D means that RaycastHit2D is Nullable
         // It means it can return either a Vector2 from Raycast2D or null.
-        private static RaycastHit2D? GetFocusedOnTile()
+        private RaycastHit2D? GetFocusedOnTile()
         {
-            Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector3 mousePos = _camera.ScreenToWorldPoint(Input.mousePosition);
             // Changing to Vector2, cuz we 2D isometric, not 3D.
             Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
 
@@ -138,11 +156,11 @@ namespace Building
             return null;
         }
 
-        private void GetInRangeTiles()
+        private void GetAdjacentTilesInRange()
         {
-            _tileRadiusFinderTiles = _tileRadiusFinder.GetTilesInRange(new Vector2Int(_building.standingOnTile.gridLocation.x, _building.standingOnTile.gridLocation.y), movementRange);
+            _rangeFinderTiles = _tileRadiusFinder.GetTilesInRange(new Vector2Int(_building.standingOnTile.gridLocation.x, _building.standingOnTile.gridLocation.y), movementRange);
 
-            foreach (var item in _tileRadiusFinderTiles)
+            foreach (var item in _rangeFinderTiles)
             {
                 item.ShowTile();
             }

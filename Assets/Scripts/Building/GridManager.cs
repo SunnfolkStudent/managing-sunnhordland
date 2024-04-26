@@ -14,7 +14,7 @@ namespace Building
         public GameObject overlayPrefab;
         public GameObject overlayContainer;
 
-        public Dictionary<Vector2Int, TileOverlay> Map;
+        public Dictionary<Vector2Int, TileOverlay> TileOverlayMap;
 
         private void Awake()
         {
@@ -31,7 +31,7 @@ namespace Building
         void Start()
         {
             var tileMaps = gameObject.transform.GetComponentsInChildren<Tilemap>().OrderByDescending(x => x.GetComponent<TilemapRenderer>().sortingOrder);
-            Map = new Dictionary<Vector2Int, TileOverlay>();
+            TileOverlayMap = new Dictionary<Vector2Int, TileOverlay>();
 
             // Retrieves any tilemaps from children, and checks their bounds.
             foreach (var tilemap in tileMaps)
@@ -49,16 +49,19 @@ namespace Building
                             if (tilemap.HasTile(new Vector3Int(x, y, z)))
                             {
                                 // If the map doesn't already have a key (Vector2Int) there, create one. 
-                                if (!Map.ContainsKey(new Vector2Int(x, y)))
+                                if (!TileOverlayMap.ContainsKey(new Vector2Int(x, y)))
                                 {
                                     var overlayTile = Instantiate(overlayPrefab, overlayContainer.transform);
                                     var cellWorldPosition = tilemap.GetCellCenterWorld(new Vector3Int(x, y, z));
+                                    
                                     // We're increasing it by z + 1, cuz this is for creating overlays on top of tiles.
                                     overlayTile.transform.position = new Vector3(cellWorldPosition.x, cellWorldPosition.y, cellWorldPosition.z + 1);
                                     overlayTile.GetComponent<SpriteRenderer>().sortingOrder = tilemap.GetComponent<TilemapRenderer>().sortingOrder;
                                     overlayTile.gameObject.GetComponent<TileOverlay>().gridLocation = new Vector3Int(x, y, z);
+                                    overlayTile.gameObject.GetComponent<TileOverlay>().typeOfTheTile = TileType.Empty;
     
-                                    Map.Add(new Vector2Int(x, y), overlayTile.gameObject.GetComponent<TileOverlay>());
+                                    // Grants each individual tile a unique key, and assigns the TileOverlay value, which is a class all tiles have as a component.
+                                    TileOverlayMap.Add(new Vector2Int(x, y), overlayTile.gameObject.GetComponent<TileOverlay>());
                                 }
                             }
                         }
@@ -73,31 +76,31 @@ namespace Building
 
 
             Vector2Int tileToCheck = new Vector2Int(originTile.x + 1, originTile.y);
-            if (Map.ContainsKey(tileToCheck))
+            if (TileOverlayMap.ContainsKey(tileToCheck))
             {
-                if (Mathf.Abs(Map[tileToCheck].transform.position.z - Map[originTile].transform.position.z) <= 1)
-                    surroundingTiles.Add(Map[tileToCheck]);
+                if (Mathf.Abs(TileOverlayMap[tileToCheck].transform.position.z - TileOverlayMap[originTile].transform.position.z) <= 1)
+                    surroundingTiles.Add(TileOverlayMap[tileToCheck]);
             }
 
             tileToCheck = new Vector2Int(originTile.x - 1, originTile.y);
-            if (Map.ContainsKey(tileToCheck))
+            if (TileOverlayMap.ContainsKey(tileToCheck))
             {
-                if (Mathf.Abs(Map[tileToCheck].transform.position.z - Map[originTile].transform.position.z) <= 1)
-                    surroundingTiles.Add(Map[tileToCheck]);
+                if (Mathf.Abs(TileOverlayMap[tileToCheck].transform.position.z - TileOverlayMap[originTile].transform.position.z) <= 1)
+                    surroundingTiles.Add(TileOverlayMap[tileToCheck]);
             }
 
             tileToCheck = new Vector2Int(originTile.x, originTile.y + 1);
-            if (Map.ContainsKey(tileToCheck))
+            if (TileOverlayMap.ContainsKey(tileToCheck))
             {
-                if (Mathf.Abs(Map[tileToCheck].transform.position.z - Map[originTile].transform.position.z) <= 1)
-                    surroundingTiles.Add(Map[tileToCheck]);
+                if (Mathf.Abs(TileOverlayMap[tileToCheck].transform.position.z - TileOverlayMap[originTile].transform.position.z) <= 1)
+                    surroundingTiles.Add(TileOverlayMap[tileToCheck]);
             }
 
             tileToCheck = new Vector2Int(originTile.x, originTile.y - 1);
-            if (Map.ContainsKey(tileToCheck))
+            if (TileOverlayMap.ContainsKey(tileToCheck))
             {
-                if (Mathf.Abs(Map[tileToCheck].transform.position.z - Map[originTile].transform.position.z) <= 1)
-                    surroundingTiles.Add(Map[tileToCheck]);
+                if (Mathf.Abs(TileOverlayMap[tileToCheck].transform.position.z - TileOverlayMap[originTile].transform.position.z) <= 1)
+                    surroundingTiles.Add(TileOverlayMap[tileToCheck]);
             }
 
             return surroundingTiles;

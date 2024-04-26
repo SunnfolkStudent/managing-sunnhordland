@@ -19,12 +19,12 @@ namespace Building
             {
                 foreach (var item in inRangeTiles)
                 {
-                    _searchableTiles.Add(item.Grid2DLocation, GridManager.Instance.Map[item.Grid2DLocation]);
+                    _searchableTiles.Add(item.Grid2DLocation, GridManager.Instance.TileOverlayMap[item.Grid2DLocation]);
                 }
             }
             else
             {
-                _searchableTiles = GridManager.Instance.Map;
+                _searchableTiles = GridManager.Instance.TileOverlayMap;
             }
 
             openList.Add(start);
@@ -87,7 +87,7 @@ namespace Building
 
         private List<TileOverlay> GetNeighbourOverlayTiles(TileOverlay currentOverlayTile)
         {
-            var map = GridManager.Instance.Map;
+            var map = GridManager.Instance.TileOverlayMap;
 
             List<TileOverlay> neighbours = new List<TileOverlay>();
 

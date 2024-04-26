@@ -3,19 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Scenes.Testing_Scenes
+namespace User_Interface__UI_
 {
     public class UIController : MonoBehaviour
     {
-        public Action PlacingRoad, PlacingHouse, PlacingSpecial, PlacingBigStructure;
-        public Button placeRoadButton, placeHouseButton, placeSpecialButton, placeBigStructureButton;
+        public Action PlacingRoad, PlacingHouse, PlacingSpecial, ExitBuildMode;
+        public Button placeRoadButton, placeHouseButton, placeSpecialButton, exitBuildModeButton;
 
         public Color outlineColor;
         private List<Button> _buttonList;
 
         private void Start()
         {
-            _buttonList = new List<Button> { placeHouseButton, placeRoadButton, placeSpecialButton };
+            _buttonList = new List<Button> { placeHouseButton, placeRoadButton, placeSpecialButton, exitBuildModeButton };
             
             placeRoadButton.onClick.AddListener(() =>
             {
@@ -38,11 +38,11 @@ namespace Scenes.Testing_Scenes
                 PlacingSpecial?.Invoke();
             });
             
-            placeBigStructureButton.onClick.AddListener(() =>
+            exitBuildModeButton.onClick.AddListener(() =>
             {
                 ResetButtonColor();
-                ModifyOutline(placeBigStructureButton);
-                PlacingBigStructure?.Invoke();
+                ModifyOutline(exitBuildModeButton);
+                ExitBuildMode?.Invoke();
             });
             
         }

@@ -3,14 +3,24 @@ using UnityEngine;
 
 namespace Building
 {
+    public enum TileType
+    {
+        Empty,
+        Road,
+        Building,
+        Nature
+    }
+    
     public class TileOverlay : MonoBehaviour
     {
+        // These 3 public ints are for pathfinding mathematics, on calculating shortest route.
         public int G;
         public int H;
         public int F => G + H;
 
         public bool isBlocked = false;
 
+        public TileType typeOfTheTile;
         public TileOverlay previous;
         public Vector3Int gridLocation;
         public Vector2Int Grid2DLocation => new(gridLocation.x, gridLocation.y);

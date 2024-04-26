@@ -8,7 +8,7 @@ namespace City_Builder_Test_with_Audio.City_Builder.Scripts
     {
         public CameraMovement cameraMovement;
         public RoadManager roadManager;
-        [FormerlySerializedAs("inputManager")] public InputManagerCityBuilder inputManagerCityBuilder;
+        public InputManagerCityBuilder inputManagerCityBuilder;
 
         public UIControllerSvs uiControllerSvs;
 
@@ -58,7 +58,7 @@ namespace City_Builder_Test_with_Audio.City_Builder.Scripts
 
         private void Update()
         {
-            cameraMovement.MoveCamera(new Vector3(inputManagerCityBuilder.CameraMovementVector.x, 0, inputManagerCityBuilder.CameraMovementVector.y));
+            cameraMovement.MoveCamera(new Vector3(inputManagerCityBuilder.cameraMovementVector.x, 0, inputManagerCityBuilder.cameraMovementVector.y));
         }
     }
 }

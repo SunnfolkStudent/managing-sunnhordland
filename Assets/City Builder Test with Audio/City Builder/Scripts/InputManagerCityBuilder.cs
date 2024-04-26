@@ -8,13 +8,14 @@ namespace City_Builder_Test_with_Audio.City_Builder.Scripts
     {
         public Action<Vector3Int> OnMouseClick, OnMouseHold;
         public Action OnMouseUp;
+        
         private Vector2 _cameraMovementVector;
+        public Vector2 cameraMovementVector => _cameraMovementVector;
         
         [SerializeField] private Camera mainCamera;
         public LayerMask groundMask;
         
         private Vector3 _lastPosition;
-        public Vector2 CameraMovementVector => _cameraMovementVector;
 
         public Vector3 GetSelectedMapPosition()
         {
@@ -57,6 +58,7 @@ namespace City_Builder_Test_with_Audio.City_Builder.Scripts
 
         private void CheckClickHoldEvent()
         {
+            // EventSystem.current.IsPointerOverGameObject() checks for any UI elements over the cursor.
             if (Input.GetMouseButton(0) && EventSystem.current.IsPointerOverGameObject() == false)
             {
                 var position = RaycastGround();
@@ -67,6 +69,7 @@ namespace City_Builder_Test_with_Audio.City_Builder.Scripts
 
         private void CheckClickUpEvent()
         {
+            // EventSystem.current.IsPointerOverGameObject() checks for any UI elements over the cursor.
             if (Input.GetMouseButtonUp(0) && EventSystem.current.IsPointerOverGameObject() == false)
             {
                 OnMouseUp?.Invoke();
@@ -75,6 +78,7 @@ namespace City_Builder_Test_with_Audio.City_Builder.Scripts
 
         private void CheckClickDownEvent()
         {
+            // EventSystem.current.IsPointerOverGameObject() checks for any UI elements over the cursor.
             if (Input.GetMouseButtonDown(0) && EventSystem.current.IsPointerOverGameObject() == false)
             {
                 var position = RaycastGround();

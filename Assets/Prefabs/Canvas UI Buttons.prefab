@@ -121,7 +121,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2355150741878517188}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &7558887816505410622
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -215,7 +227,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: House
+  m_Text: Building
 --- !u!1 &1008670321381186657
 GameObject:
   m_ObjectHideFlags: 0
@@ -294,7 +306,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Special
+  m_Text: Nature
 --- !u!1 &1405344250218888363
 GameObject:
   m_ObjectHideFlags: 0
@@ -373,9 +385,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Place 2x2
-
-'
+  m_Text: Exit Build Mode
 --- !u!1 &2245641654856004768
 GameObject:
   m_ObjectHideFlags: 0
@@ -467,6 +477,7 @@ GameObject:
   - component: {fileID: 1119619470533589546}
   - component: {fileID: 4879601148671558218}
   - component: {fileID: 8799071397846004498}
+  - component: {fileID: 6638285703134080191}
   m_Layer: 5
   m_Name: Canvas UI Buttons
   m_TagString: Untagged
@@ -557,6 +568,23 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &6638285703134080191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5994282538963018075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43b0e2affbd001b4d8efc8a3b1f9b860, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  placeRoadButton: {fileID: 3045936778612085902}
+  placeHouseButton: {fileID: 762712903504680582}
+  placeSpecialButton: {fileID: 3564192501236624827}
+  exitBuildModeButton: {fileID: 3559459771433895587}
+  outlineColor: {r: 0.23549296, g: 0.9245283, b: 0.68899864, a: 0}
 --- !u!1 &6405810079413400712
 GameObject:
   m_ObjectHideFlags: 0
@@ -615,7 +643,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.18498755, g: 0, b: 1, a: 1}
+  m_Color: {r: 0.3018868, g: 0.24349041, b: 0.1965112, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -757,7 +785,7 @@ GameObject:
   - component: {fileID: 3564192501236624827}
   - component: {fileID: 3699824157655932019}
   m_Layer: 5
-  m_Name: PlaceSpecialBtn
+  m_Name: PlaceNatureBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -894,7 +922,7 @@ GameObject:
   - component: {fileID: 3559459771433895587}
   - component: {fileID: 4683168600357832396}
   m_Layer: 5
-  m_Name: PlaceBigBtn
+  m_Name: ExitBuildModeBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1031,7 +1059,7 @@ GameObject:
   - component: {fileID: 762712903504680582}
   - component: {fileID: 2795016995724750603}
   m_Layer: 5
-  m_Name: PlaceHouseBtn
+  m_Name: PlaceBuildingBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
