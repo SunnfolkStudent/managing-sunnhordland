@@ -8,8 +8,8 @@ namespace Building
 {
     public class PlayerInputManager : MonoBehaviour
     {
-        // public Action<Vector2Int> OnMouseClick, OnMouseHold;
-        // public Action OnMouseUp;
+        public Action<Vector2Int> OnMouseClick, OnMouseHold;
+        public Action OnMouseUp;
         
         // private Vector2 _cameraMovementVector; 
         // public Vector2 cameraMovementVector => _cameraMovementVector;

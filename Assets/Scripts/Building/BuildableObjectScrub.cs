@@ -5,11 +5,17 @@ namespace Building
     [CreateAssetMenu]
     public class BuildableObjectScrub : ScriptableObject
     {
+        // Related to Object and TileMap
+        public int itemIndex;
         public GameObject itemObject;
+        public Vector2Int itemTileSize;
+        public TileType itemType;
+        
+        // Related to Shop
         public string itemName;
         public string itemDescription;
         public Sprite itemImage;
-        public Vector2Int itemTileSize;
         public int itemPrice;
     }
+    
 }

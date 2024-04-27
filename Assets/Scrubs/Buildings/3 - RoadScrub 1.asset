@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63d0ef74c60709443b100be4841a11f5, type: 3}
+  m_Name: 3 - RoadScrub 1
+  m_EditorClassIdentifier: 
+  itemIndex: 3
+  itemObject: {fileID: 6436491721352411152, guid: a33b18b0e416be749b124274b194dffc, type: 3}
+  itemTileSize: {x: 1, y: 1}
+  itemType: 1
+  itemName: Snow Road
+  itemDescription: Test Road with snow...
+  itemImage: {fileID: 21300000, guid: b4cb94a28918eba4099771c7dff9cf19, type: 3}
+  itemPrice: 5

@@ -8,15 +8,13 @@ namespace Building
         public PlayerInputManager playerInputManager;
         public UIController uiController;
         
-        /*private void Start()
+        private void Start()
         {
-            uiController.PlacingRoad += RoadPlacementHandler;
-            uiController.PlacingHouse += HousePlacementHandler;
-            uiController.PlacingSpecial += NaturePlacementHandler;
+            uiController.EnteringBuildMode += EnterBuildModeHandler;
             uiController.ExitBuildMode += ExitBuildModeHandler;
-        }*/
+        }
 
-        /*#region --- Currently Active Build State ---
+        #region --- Currently Active Build State ---
 
         private void ExitBuildModeHandler()
         {
@@ -24,21 +22,14 @@ namespace Building
             Debug.Log("Leaving Build Mode.");
         }
         
-        private void NaturePlacementHandler()
+        private void EnterBuildModeHandler(int gameObjectToBuild)
         {
             ClearInputActions();
-            Debug.Log("Ready to place Nature.");
-            playerInputManager.OnMouseClick += PlaceNature;
+            Debug.Log("Ready to place buildings.");
+            playerInputManager.OnMouseClick += PlaceStructure;
         }
 
-        private void HousePlacementHandler()
-        {
-            ClearInputActions();
-            Debug.Log("Ready to place Houses.");
-            playerInputManager.OnMouseClick += PlaceHouse;
-        }
-
-        private void RoadPlacementHandler()
+        /*private void RoadPlacementHandler()
         {
             ClearInputActions();
             
@@ -46,8 +37,9 @@ namespace Building
             playerInputManager.OnMouseClick += PlaceRoad;
             playerInputManager.OnMouseHold += PlaceRoad;
             playerInputManager.OnMouseUp += FinishPlacingRoad;
-        }
+        }*/
 
+        // Used to clear stored inputs between phases / events.
         private void ClearInputActions()
         {
             playerInputManager.OnMouseClick = null;
@@ -55,14 +47,9 @@ namespace Building
             playerInputManager.OnMouseUp = null;
         }
 
-        #endregion*/
+        #endregion
         
-        private void PlaceNature(Vector2Int position)
-        {
-            // TODO: Add the ability to place prefabs.
-        }
-        
-        private void PlaceHouse(Vector2Int position)
+        private void PlaceStructure(Vector2Int position)
         {
             // TODO: Add the ability to place prefabs.
         }

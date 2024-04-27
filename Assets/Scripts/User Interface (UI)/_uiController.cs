@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Building;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,36 +8,28 @@ namespace User_Interface__UI_
 {
     public class UIController : MonoBehaviour
     {
-        public Action PlacingRoad, PlacingHouse, PlacingSpecial, ExitBuildMode;
-        public Button placeRoadButton, placeHouseButton, placeSpecialButton, exitBuildModeButton;
+        public Action<int> EnteringBuildMode; 
+            public Action ExitBuildMode;
+        public Button enterBuildModeButton, exitBuildModeButton;
 
         public Color outlineColor;
-        private List<Button> _buttonList;
+        [SerializeField] private List<Button> _itemButtonList;
 
         private void Start()
         {
-            _buttonList = new List<Button> { placeHouseButton, placeRoadButton, placeSpecialButton, exitBuildModeButton };
-            
-            placeRoadButton.onClick.AddListener(() =>
+            _itemButtonList = new List<Button>();
+
+            foreach (var itemButton in gameObject.transform.GetComponentsInChildren<PurchasableItem>())
             {
-                ResetButtonColor();
-                ModifyOutline(placeRoadButton);
-                PlacingRoad?.Invoke();
-            });
-            
-            placeHouseButton.onClick.AddListener(() => 
-            {
-                ResetButtonColor();
-                ModifyOutline(placeHouseButton);
-                PlacingHouse?.Invoke();
-            });
-            
-            placeSpecialButton.onClick.AddListener(() =>
-            {
-                ResetButtonColor();
-                ModifyOutline(placeSpecialButton);
-                PlacingSpecial?.Invoke();
-            });
+                enterBuildModeButton.onClick.AddListener(() =>
+                {
+                    var tempInt = 1;
+                    ResetButtonColor();
+                    ModifyOutline(enterBuildModeButton);
+                    EnteringBuildMode?.Invoke(tempInt);
+                });
+                _itemButtonList.Add(itemButton.itemButton);
+            }
             
             exitBuildModeButton.onClick.AddListener(() =>
             {
@@ -44,7 +37,6 @@ namespace User_Interface__UI_
                 ModifyOutline(exitBuildModeButton);
                 ExitBuildMode?.Invoke();
             });
-            
         }
 
         private void ModifyOutline(Button button)
@@ -56,7 +48,7 @@ namespace User_Interface__UI_
 
         private void ResetButtonColor()
         {
-            foreach (var button in _buttonList)
+            foreach (var button in _itemButtonList)
             {
                 button.GetComponent<Outline>().enabled = false;
             }
