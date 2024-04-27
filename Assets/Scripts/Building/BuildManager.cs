@@ -5,6 +5,8 @@ namespace Building
 {
     public class BuildManager : MonoBehaviour
     {
+        public static bool InBuildMode;
+        
         public PlayerInputManager playerInputManager;
         public UIController uiController;
         
@@ -19,12 +21,14 @@ namespace Building
         private void ExitBuildModeHandler()
         {
             ClearInputActions();
+            InBuildMode = false;
             Debug.Log("Leaving Build Mode.");
         }
         
         private void EnterBuildModeHandler(int gameObjectToBuild)
         {
             ClearInputActions();
+            InBuildMode = true;
             Debug.Log("Ready to place buildings.");
             playerInputManager.OnMouseClick += PlaceStructure;
         }

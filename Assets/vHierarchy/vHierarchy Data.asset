@@ -15,6 +15,7 @@ MonoBehaviour:
   sceneDatas_byGuid:
     keys:
     - 65cfb77a3ed8b694e83395f235149508
+    - 21deba66faaeac04eab53aab7af6a0fb
     values:
     - goDatas_byGlobalId:
         keys:
@@ -25,3 +26,39 @@ MonoBehaviour:
           iconNameOrGuid: Canvas Icon
         - colorIndex: 3
           iconNameOrGuid: 
+    - goDatas_byGlobalId:
+        keys:
+        - globalObjectIdString: GlobalObjectId_V1-2-21deba66faaeac04eab53aab7af6a0fb-481201749-0
+        - globalObjectIdString: GlobalObjectId_V1-2-21deba66faaeac04eab53aab7af6a0fb-2101731345-0
+        - globalObjectIdString: GlobalObjectId_V1-2-21deba66faaeac04eab53aab7af6a0fb-4235139052915806062-2340481734164801316
+        - globalObjectIdString: GlobalObjectId_V1-2-21deba66faaeac04eab53aab7af6a0fb-5994282538963018075-1097138037741400082
+        - globalObjectIdString: GlobalObjectId_V1-2-21deba66faaeac04eab53aab7af6a0fb-4520086762543105959-5159273440781721026
+        - globalObjectIdString: GlobalObjectId_V1-2-21deba66faaeac04eab53aab7af6a0fb-7767035929632181121-1034062192
+        - globalObjectIdString: GlobalObjectId_V1-2-21deba66faaeac04eab53aab7af6a0fb-1576846454-0
+        - globalObjectIdString: GlobalObjectId_V1-2-21deba66faaeac04eab53aab7af6a0fb-5499676928145634701-208759983
+        - globalObjectIdString: GlobalObjectId_V1-2-21deba66faaeac04eab53aab7af6a0fb-114762838-0
+        - globalObjectIdString: GlobalObjectId_V1-2-21deba66faaeac04eab53aab7af6a0fb-1841949412-0
+        - globalObjectIdString: GlobalObjectId_V1-2-21deba66faaeac04eab53aab7af6a0fb-333923601-0
+        values:
+        - colorIndex: 0
+          iconNameOrGuid: LightmapParameters Icon
+        - colorIndex: 7
+          iconNameOrGuid: Folder Icon
+        - colorIndex: 0
+          iconNameOrGuid: PreMatSphere
+        - colorIndex: 0
+          iconNameOrGuid: Canvas Icon
+        - colorIndex: 0
+          iconNameOrGuid: MeshCollider Icon
+        - colorIndex: 0
+          iconNameOrGuid: Camera Icon
+        - colorIndex: 0
+          iconNameOrGuid: AudioClip Icon
+        - colorIndex: 0
+          iconNameOrGuid: TrailRenderer Icon
+        - colorIndex: 0
+          iconNameOrGuid: StandaloneInputModule Icon
+        - colorIndex: 0
+          iconNameOrGuid: Favorite
+        - colorIndex: 0
+          iconNameOrGuid: Terrain Icon

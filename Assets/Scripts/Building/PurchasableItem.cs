@@ -1,33 +1,35 @@
 using System;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
+using User_Interface__UI_;
 
 namespace Building
 {
     public class PurchasableItem : MonoBehaviour
     {
-        public ShopManager shopManager;
-        public BuildableObjectScrub itemScrub;
+        private UIController _uiController;
+        private ShopManager _shopManager;
+        private BuildableObjectScrub _itemScrub;
 
         public Button itemButton;
         
-        private int _productIndex;
+        public int productIndex;
 
-        private void Awake()
+        private void Start()
         {
-            _productIndex = itemScrub.itemIndex;
+            productIndex = _itemScrub.itemIndex;
         }
 
-        public void BuyProduct()
+        public bool CanWeBuyProduct()
         {
-            if (shopManager.CanWeAffordObject(itemScrub.itemPrice) >= 0)
+            if (_shopManager.CanWeAffordObject(_itemScrub.itemPrice) >= 0)
             {
-                shopManager.ProductSelectedForPlacing(_productIndex);
+                _shopManager.ProductSelectedForPlacing(productIndex);
+                return true;
             }
-            else
-            {
-                Debug.Log("Not enough, you're missing: " + -shopManager.CanWeAffordObject(itemScrub.itemPrice) + " gratitude points!");
-            }
+            Debug.Log("Not enough, you're missing: " + -_shopManager.CanWeAffordObject(_itemScrub.itemPrice) + " gratitude points!");
+            return false;
         }
     }
 }

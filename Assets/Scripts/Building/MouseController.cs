@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 namespace Building
@@ -34,6 +35,10 @@ namespace Building
 
         void LateUpdate()
         {
+            if (Keyboard.current.sKey.wasPressedThisFrame)
+            {
+                SceneChanger.OpenShopUI();
+            }
             if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Benjamin Test 4"))
             {
                 CheckClickDown();

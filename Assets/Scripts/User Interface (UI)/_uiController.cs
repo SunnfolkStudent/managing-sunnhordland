@@ -9,34 +9,47 @@ namespace User_Interface__UI_
     public class UIController : MonoBehaviour
     {
         public Action<int> EnteringBuildMode; 
-            public Action ExitBuildMode;
-        public Button enterBuildModeButton, exitBuildModeButton;
+        public Action ExitBuildMode;
 
         public Color outlineColor;
-        [SerializeField] private List<Button> _itemButtonList;
+        [SerializeField] private List<Button> itemButtonList;
+        [SerializeField] private List<Button> exitButtonList;
 
         private void Start()
         {
-            _itemButtonList = new List<Button>();
+            itemButtonList = new List<Button>();
+            exitButtonList = new List<Button>();
+            
+            // TODO: Optional: Add onMouseHover code that helps showcase what items are available and nah.
 
-            foreach (var itemButton in gameObject.transform.GetComponentsInChildren<PurchasableItem>())
+            foreach (var item in gameObject.transform.GetComponentsInChildren<PurchasableItem>())
             {
-                enterBuildModeButton.onClick.AddListener(() =>
+                var itemButton = item.itemButton;
+                itemButton.onClick.AddListener(() =>
                 {
-                    var tempInt = 1;
-                    ResetButtonColor();
-                    ModifyOutline(enterBuildModeButton);
-                    EnteringBuildMode?.Invoke(tempInt);
+                    var itemInt = item.productIndex;
+                    if (item.CanWeBuyProduct())
+                    {
+                        ResetButtonColor();
+                        ModifyOutline(itemButton);
+                        EnteringBuildMode?.Invoke(itemInt);
+                    }
                 });
-                _itemButtonList.Add(itemButton.itemButton);
+                itemButtonList.Add(itemButton);
+            }
+
+            foreach (var exitButtonScript in gameObject.transform.GetComponentsInChildren<ExitButtonScript>())
+            { 
+                var exitButton = exitButtonScript.exitButton;
+               exitButton.onClick.AddListener(() =>
+               {
+                   ResetButtonColor();
+                   ModifyOutline(exitButton);
+                   ExitBuildMode?.Invoke();
+               });
+                exitButtonList.Add(exitButton); 
             }
             
-            exitBuildModeButton.onClick.AddListener(() =>
-            {
-                ResetButtonColor();
-                ModifyOutline(exitBuildModeButton);
-                ExitBuildMode?.Invoke();
-            });
         }
 
         private void ModifyOutline(Button button)
@@ -48,7 +61,7 @@ namespace User_Interface__UI_
 
         private void ResetButtonColor()
         {
-            foreach (var button in _itemButtonList)
+            foreach (var button in itemButtonList)
             {
                 button.GetComponent<Outline>().enabled = false;
             }

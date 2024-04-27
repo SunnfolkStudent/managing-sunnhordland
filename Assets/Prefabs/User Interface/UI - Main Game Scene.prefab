@@ -230,7 +230,7 @@ GameObject:
   - component: {fileID: 8799071397846004498}
   - component: {fileID: 6638285703134080191}
   m_Layer: 5
-  m_Name: Canvas UI Buttons
+  m_Name: UI - Main Game Scene
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -334,6 +334,7 @@ MonoBehaviour:
   enterBuildModeButton: {fileID: 8728794859804235581}
   exitBuildModeButton: {fileID: 3559459771433895587}
   outlineColor: {r: 0.23549296, g: 0.9245283, b: 0.68899864, a: 0}
+  _itemButtonList: []
 --- !u!1 &6405810079413400712
 GameObject:
   m_ObjectHideFlags: 0
