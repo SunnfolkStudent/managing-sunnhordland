@@ -130,7 +130,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -144,7 +144,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 125
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -168,7 +168,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -887,7 +887,39 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Pause Menu Text_0: -2921584563867127088
+      Pause Menu Text_1: 908747573319471439
+      Pause Menu Text_10: -265462716377098282
+      Pause Menu Text_11: 745988282229555354
+      Pause Menu Text_12: 9125636715560137872
+      Pause Menu Text_13: 2237162321228361022
+      Pause Menu Text_14: -5162330175018174550
+      Pause Menu Text_15: 6204326727841941571
+      Pause Menu Text_16: 2531355196775589123
+      Pause Menu Text_17: -6166020843568394795
+      Pause Menu Text_18: -8822103420475172955
+      Pause Menu Text_19: 9054184236175043872
+      Pause Menu Text_2: 8596745418706763325
+      Pause Menu Text_20: -3192672018795773042
+      Pause Menu Text_21: -6412189064593068572
+      Pause Menu Text_22: 6121879848896675977
+      Pause Menu Text_23: 8675579726300327297
+      Pause Menu Text_24: -1274974794326870828
+      Pause Menu Text_25: -396689206060941630
+      Pause Menu Text_26: -1337827625438112814
+      Pause Menu Text_27: -9144997663227232345
+      Pause Menu Text_28: -4270421065315619157
+      Pause Menu Text_29: -7280706316867250141
+      Pause Menu Text_3: 4983465786686794498
+      Pause Menu Text_30: 8786569799455332249
+      Pause Menu Text_31: -8423523588035769165
+      Pause Menu Text_4: -7514109191537295130
+      Pause Menu Text_5: 7982510653423508815
+      Pause Menu Text_6: -8191281457230626645
+      Pause Menu Text_7: 6563337263519124459
+      Pause Menu Text_8: 8270637377764066384
+      Pause Menu Text_9: -8181683844640891334
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

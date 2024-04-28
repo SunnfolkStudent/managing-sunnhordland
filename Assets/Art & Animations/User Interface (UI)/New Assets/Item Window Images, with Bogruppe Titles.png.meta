@@ -178,7 +178,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -192,7 +192,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 125
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -216,7 +216,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -1271,7 +1271,55 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Item Window Images, with Bogruppe Titles_0: -3578165651408224066
+      Item Window Images, with Bogruppe Titles_1: 8613134674073874993
+      Item Window Images, with Bogruppe Titles_10: -2466165915611925103
+      Item Window Images, with Bogruppe Titles_11: -1502121994459271782
+      Item Window Images, with Bogruppe Titles_12: -2552391104327853086
+      Item Window Images, with Bogruppe Titles_13: 9187342180804487023
+      Item Window Images, with Bogruppe Titles_14: -5893297340921732189
+      Item Window Images, with Bogruppe Titles_15: 5043163687751265673
+      Item Window Images, with Bogruppe Titles_16: 8712464911751225956
+      Item Window Images, with Bogruppe Titles_17: -4005869583087823159
+      Item Window Images, with Bogruppe Titles_18: 91703878624987112
+      Item Window Images, with Bogruppe Titles_19: -5000371737654293678
+      Item Window Images, with Bogruppe Titles_2: -244505884533019031
+      Item Window Images, with Bogruppe Titles_20: 7766908234863856283
+      Item Window Images, with Bogruppe Titles_21: -853741884543566757
+      Item Window Images, with Bogruppe Titles_22: 8093636605293502000
+      Item Window Images, with Bogruppe Titles_23: 520275275049424663
+      Item Window Images, with Bogruppe Titles_24: 1535140864236357260
+      Item Window Images, with Bogruppe Titles_25: -3962339490450647440
+      Item Window Images, with Bogruppe Titles_26: 2305401918033525422
+      Item Window Images, with Bogruppe Titles_27: 5453414165655529893
+      Item Window Images, with Bogruppe Titles_28: 5354223994103156015
+      Item Window Images, with Bogruppe Titles_29: -4897964989484821853
+      Item Window Images, with Bogruppe Titles_3: 7233865316793805905
+      Item Window Images, with Bogruppe Titles_30: 7926036993402019356
+      Item Window Images, with Bogruppe Titles_31: -4516458732296210292
+      Item Window Images, with Bogruppe Titles_32: 8225984754411162263
+      Item Window Images, with Bogruppe Titles_33: 576265045982341189
+      Item Window Images, with Bogruppe Titles_34: -4075833999431784511
+      Item Window Images, with Bogruppe Titles_35: 1972377182619397223
+      Item Window Images, with Bogruppe Titles_36: -2337332046608046090
+      Item Window Images, with Bogruppe Titles_37: 7008737462469504032
+      Item Window Images, with Bogruppe Titles_38: -2953333008879827242
+      Item Window Images, with Bogruppe Titles_39: -1343376263813359930
+      Item Window Images, with Bogruppe Titles_4: -4590790402661902711
+      Item Window Images, with Bogruppe Titles_40: 271140085146240864
+      Item Window Images, with Bogruppe Titles_41: 5811790986380210744
+      Item Window Images, with Bogruppe Titles_42: 2649007977239038505
+      Item Window Images, with Bogruppe Titles_43: 3891316713228613923
+      Item Window Images, with Bogruppe Titles_44: -4285886630080282874
+      Item Window Images, with Bogruppe Titles_45: -7896378722447469380
+      Item Window Images, with Bogruppe Titles_46: 4129551867644884424
+      Item Window Images, with Bogruppe Titles_47: 845099617605966776
+      Item Window Images, with Bogruppe Titles_5: -5776021515192250773
+      Item Window Images, with Bogruppe Titles_6: 7575706322638641055
+      Item Window Images, with Bogruppe Titles_7: 237606478452984120
+      Item Window Images, with Bogruppe Titles_8: 2516419344033286302
+      Item Window Images, with Bogruppe Titles_9: 1222657059567732406
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

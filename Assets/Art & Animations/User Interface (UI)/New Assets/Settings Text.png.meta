@@ -151,7 +151,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -165,7 +165,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 125
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -189,7 +189,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -1055,7 +1055,46 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Settings Text_0: 7908119024701135095
+      Settings Text_1: -6318458317901550765
+      Settings Text_10: -1754604003820000789
+      Settings Text_11: 1022765004915024077
+      Settings Text_12: -6017674895873288045
+      Settings Text_13: 4606419125149404556
+      Settings Text_14: 6805465730246300739
+      Settings Text_15: 6544693043528758181
+      Settings Text_16: -5670417887419852202
+      Settings Text_17: -2679699646788612259
+      Settings Text_18: -763298788842248239
+      Settings Text_19: -5230303230012789210
+      Settings Text_2: 3016911013125546409
+      Settings Text_20: -1421893345618150450
+      Settings Text_21: -7774686448534231828
+      Settings Text_22: -5096941274758063657
+      Settings Text_23: 8938972201800033730
+      Settings Text_24: -2515471831792574903
+      Settings Text_25: -3028188204408832648
+      Settings Text_26: 3460543011179793726
+      Settings Text_27: 4373688394942771232
+      Settings Text_28: 4786615640636955804
+      Settings Text_29: -4189590604706795287
+      Settings Text_3: -2417418470706194487
+      Settings Text_30: -5926133344435395037
+      Settings Text_31: 8296663921249563661
+      Settings Text_32: -4078572888362015551
+      Settings Text_33: -5183503813403375581
+      Settings Text_34: 2650476043430978742
+      Settings Text_35: -3053205207750302878
+      Settings Text_36: 9084658632416213052
+      Settings Text_37: 1394918004043229447
+      Settings Text_38: -2330455905291410941
+      Settings Text_4: 5116557950803346409
+      Settings Text_5: 6584532721771588328
+      Settings Text_6: 8539680537554978249
+      Settings Text_7: -5354562745425093915
+      Settings Text_8: 5506561599892264224
+      Settings Text_9: -4545739243314450802
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

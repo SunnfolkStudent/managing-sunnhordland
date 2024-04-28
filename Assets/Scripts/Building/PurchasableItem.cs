@@ -10,7 +10,7 @@ namespace Building
     {
         private UIController _uiController;
         private ShopManager _shopManager;
-        private BuildableObjectScrub _itemScrub;
+        [SerializeField] private BuildableObjectScrub itemScrub;
 
         public Button itemButton;
         
@@ -18,17 +18,17 @@ namespace Building
 
         private void Start()
         {
-            productIndex = _itemScrub.itemIndex;
+            productIndex = itemScrub.itemIndex;
         }
 
         public bool CanWeBuyProduct()
         {
-            if (_shopManager.CanWeAffordObject(_itemScrub.itemPrice) >= 0)
+            if (_shopManager.CanWeAffordObject(itemScrub.itemPrice) >= 0)
             {
                 _shopManager.ProductSelectedForPlacing(productIndex);
                 return true;
             }
-            Debug.Log("Not enough, you're missing: " + -_shopManager.CanWeAffordObject(_itemScrub.itemPrice) + " gratitude points!");
+            Debug.Log("Not enough, you're missing: " + -_shopManager.CanWeAffordObject(itemScrub.itemPrice) + " gratitude points!");
             return false;
         }
     }

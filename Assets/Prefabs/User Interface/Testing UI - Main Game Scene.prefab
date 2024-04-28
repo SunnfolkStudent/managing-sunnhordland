@@ -230,7 +230,7 @@ GameObject:
   - component: {fileID: 8799071397846004498}
   - component: {fileID: 6638285703134080191}
   m_Layer: 5
-  m_Name: UI - Main Game Scene
+  m_Name: Testing UI - Main Game Scene
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -331,10 +331,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43b0e2affbd001b4d8efc8a3b1f9b860, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enterBuildModeButton: {fileID: 8728794859804235581}
-  exitBuildModeButton: {fileID: 3559459771433895587}
   outlineColor: {r: 0.23549296, g: 0.9245283, b: 0.68899864, a: 0}
-  _itemButtonList: []
+  itemButtonList: []
+  exitButtonList: []
 --- !u!1 &6405810079413400712
 GameObject:
   m_ObjectHideFlags: 0

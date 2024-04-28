@@ -1,7 +1,10 @@
 fileFormatVersion: 2
-guid: 1e7b983a5e52c4792be64089d3c0afc2
+guid: b67bad773c1eb444682d60ba471dbde9
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -1795275916044127775
+    second: Locked Icon_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -48,8 +51,8 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 512
-  spriteBorder: {x: 711, y: 72, z: 749, w: 58}
+  spritePixelsToUnits: 150
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -110,22 +113,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 2_0
+      name: Locked Icon_0
       rect:
         serializedVersion: 2
-        x: 767
-        y: 101
-        width: 379
-        height: 598
+        x: 165
+        y: 57
+        width: 840
+        height: 1009
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5092c600ca4184060800000000000000
-      internalID: 6937817954938267909
+      spriteID: 1e1306ee016e517e0800000000000000
+      internalID: -1795275916044127775
       vertices: []
       indices: 
       edges: []
@@ -134,14 +137,14 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 1537655665
+    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      2_0: 6937817954938267909
+      Locked Icon_0: -1795275916044127775
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
