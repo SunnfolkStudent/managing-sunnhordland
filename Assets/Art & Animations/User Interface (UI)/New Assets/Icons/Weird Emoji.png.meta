@@ -1,7 +1,10 @@
 fileFormatVersion: 2
-guid: 8e52aeefdec7e4bf88870b11c3295725
+guid: 5f8ab7c3771384639a5bd5ff2836c756
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 6937817954938267909
+    second: 2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -43,13 +46,18 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
+<<<<<<<< HEAD:Assets/Art & Animations/User Interface (UI)/New Assets/Icons/Weird Emoji.png.meta
   spritePixelsToUnits: 150
   spriteBorder: {x: 711, y: 72, z: 749, w: 58}
+========
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+>>>>>>>> Pre-Production-Branch:Assets/Art & Animations/Students/New Assets/StudentWalkSouth_2.png.meta
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -113,12 +121,12 @@ TextureImporter:
       name: 2_0
       rect:
         serializedVersion: 2
-        x: 767
-        y: 101
-        width: 379
-        height: 598
+        x: 138
+        y: 58
+        width: 382
+        height: 949
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -133,8 +141,8 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
-    internalID: 1537655665
+    spriteID: 
+    internalID: 0
     vertices: []
     indices: 
     edges: []

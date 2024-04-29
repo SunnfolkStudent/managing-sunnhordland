@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Art & Animations/Students/New Assets/1.png.meta
 guid: e751ae2d454a3f8449a43209571d8b3b
+========
+guid: 1454ee5c627864ccb80d18b2a422d3c7
+>>>>>>>> Pre-Production-Branch:Assets/Art & Animations/Students/New Assets/StudentWalkSouth_1.png.meta
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -37,7 +41,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -75,7 +79,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -116,10 +120,17 @@ TextureImporter:
       name: 1_0
       rect:
         serializedVersion: 2
+<<<<<<<< HEAD:Assets/Art & Animations/Students/New Assets/1.png.meta
         x: 119
         y: 53
         width: 369
         height: 953
+========
+        x: 142
+        y: 49
+        width: 381
+        height: 939
+>>>>>>>> Pre-Production-Branch:Assets/Art & Animations/Students/New Assets/StudentWalkSouth_1.png.meta
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,7 +154,12 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+<<<<<<<< HEAD:Assets/Art & Animations/Students/New Assets/1.png.meta
     nameFileIdTable: {}
+========
+    nameFileIdTable:
+      1_0: -855298285791758126
+>>>>>>>> Pre-Production-Branch:Assets/Art & Animations/Students/New Assets/StudentWalkSouth_1.png.meta
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
