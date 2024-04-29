@@ -74,7 +74,6 @@ namespace Building
         {
             var surroundingTiles = new List<TileOverlay>();
 
-
             Vector2Int tileToCheck = new Vector2Int(originTile.x + 1, originTile.y);
             if (TileOverlayMap.ContainsKey(tileToCheck))
             {
@@ -102,7 +101,68 @@ namespace Building
                 if (Mathf.Abs(TileOverlayMap[tileToCheck].transform.position.z - TileOverlayMap[originTile].transform.position.z) <= 1)
                     surroundingTiles.Add(TileOverlayMap[tileToCheck]);
             }
+            return surroundingTiles;
+        }
+        
+        public List<TileOverlay> GetSurroundingSquareTiles(Vector2Int originTile)
+        {
+            var surroundingTiles = new List<TileOverlay>();
 
+            Vector2Int tileToCheck = new Vector2Int(originTile.x + 1, originTile.y);
+            if (TileOverlayMap.ContainsKey(tileToCheck))
+            {
+                if (Mathf.Abs(TileOverlayMap[tileToCheck].transform.position.z - TileOverlayMap[originTile].transform.position.z) <= 1)
+                    surroundingTiles.Add(TileOverlayMap[tileToCheck]);
+            }
+            
+            tileToCheck = new Vector2Int(originTile.x + 1, originTile.y + 1);
+            if (TileOverlayMap.ContainsKey(tileToCheck))
+            {
+                if (Mathf.Abs(TileOverlayMap[tileToCheck].transform.position.z - TileOverlayMap[originTile].transform.position.z) <= 1)
+                    surroundingTiles.Add(TileOverlayMap[tileToCheck]);
+            }
+            
+            tileToCheck = new Vector2Int(originTile.x + 1, originTile.y - 1);
+            if (TileOverlayMap.ContainsKey(tileToCheck))
+            {
+                if (Mathf.Abs(TileOverlayMap[tileToCheck].transform.position.z - TileOverlayMap[originTile].transform.position.z) <= 1)
+                    surroundingTiles.Add(TileOverlayMap[tileToCheck]);
+            }
+
+            tileToCheck = new Vector2Int(originTile.x - 1, originTile.y);
+            if (TileOverlayMap.ContainsKey(tileToCheck))
+            {
+                if (Mathf.Abs(TileOverlayMap[tileToCheck].transform.position.z - TileOverlayMap[originTile].transform.position.z) <= 1)
+                    surroundingTiles.Add(TileOverlayMap[tileToCheck]);
+            }
+            
+            tileToCheck = new Vector2Int(originTile.x - 1, originTile.y + 1);
+            if (TileOverlayMap.ContainsKey(tileToCheck))
+            {
+                if (Mathf.Abs(TileOverlayMap[tileToCheck].transform.position.z - TileOverlayMap[originTile].transform.position.z) <= 1)
+                    surroundingTiles.Add(TileOverlayMap[tileToCheck]);
+            }
+            
+            tileToCheck = new Vector2Int(originTile.x - 1, originTile.y - 1);
+            if (TileOverlayMap.ContainsKey(tileToCheck))
+            {
+                if (Mathf.Abs(TileOverlayMap[tileToCheck].transform.position.z - TileOverlayMap[originTile].transform.position.z) <= 1)
+                    surroundingTiles.Add(TileOverlayMap[tileToCheck]);
+            }
+
+            tileToCheck = new Vector2Int(originTile.x, originTile.y + 1);
+            if (TileOverlayMap.ContainsKey(tileToCheck))
+            {
+                if (Mathf.Abs(TileOverlayMap[tileToCheck].transform.position.z - TileOverlayMap[originTile].transform.position.z) <= 1)
+                    surroundingTiles.Add(TileOverlayMap[tileToCheck]);
+            }
+
+            tileToCheck = new Vector2Int(originTile.x, originTile.y - 1);
+            if (TileOverlayMap.ContainsKey(tileToCheck))
+            {
+                if (Mathf.Abs(TileOverlayMap[tileToCheck].transform.position.z - TileOverlayMap[originTile].transform.position.z) <= 1)
+                    surroundingTiles.Add(TileOverlayMap[tileToCheck]);
+            }
             return surroundingTiles;
         }
     }

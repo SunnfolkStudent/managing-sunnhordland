@@ -10,6 +10,7 @@ namespace Building
     {
         private BuildManager _buildManager;
         private UIController _uiController;
+        public static int ItemSelected;
         
         [SerializeField] private int currentGratitudePoints = 1000;
 
@@ -51,6 +52,7 @@ namespace Building
         public void BuyProduct(int itemIndex)
         {
             var selectedItem = itemScrubs[itemIndex];
+            ItemSelected = selectedItem.itemIndex;
 
             if (CanWeAffordObject(selectedItem.itemPrice) >= 0)
             {

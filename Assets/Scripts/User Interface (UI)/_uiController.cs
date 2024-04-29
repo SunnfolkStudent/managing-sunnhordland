@@ -8,6 +8,8 @@ namespace User_Interface__UI_
 {
     public class UIController : MonoBehaviour
     {
+        private ShopManager _shopManager;
+        
         public Action<int> EnteringBuildMode; 
         public Action ExitBuildMode;
 
@@ -27,7 +29,7 @@ namespace User_Interface__UI_
                 var itemButton = item.itemButton;
                 itemButton.onClick.AddListener(() =>
                 {
-                    var itemInt = item.productIndex;
+                    var itemInt = item.ProductIndex;
                     if (item.CanWeBuyProduct())
                     {
                         ResetButtonColor();
@@ -65,6 +67,11 @@ namespace User_Interface__UI_
             {
                 button.GetComponent<Outline>().enabled = false;
             }
+        }
+
+        public void BuyItemFromShop()
+        {
+            
         }
     }
 }

@@ -14,18 +14,18 @@ namespace Building
 
         public Button itemButton;
         
-        public int productIndex;
+        [HideInInspector] internal int ProductIndex;
 
         private void Start()
         {
-            productIndex = itemScrub.itemIndex;
+            ProductIndex = itemScrub.itemIndex;
         }
 
         public bool CanWeBuyProduct()
         {
             if (_shopManager.CanWeAffordObject(itemScrub.itemPrice) >= 0)
             {
-                _shopManager.ProductSelectedForPlacing(productIndex);
+                _shopManager.ProductSelectedForPlacing(ProductIndex);
                 return true;
             }
             Debug.Log("Not enough, you're missing: " + -_shopManager.CanWeAffordObject(itemScrub.itemPrice) + " gratitude points!");

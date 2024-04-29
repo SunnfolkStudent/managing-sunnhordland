@@ -6,6 +6,7 @@ public class SceneChanger : MonoBehaviour
 {
     public static Coroutine CloseSceneCoroutine;
     private static string _test;
+    public static bool InsideShop;
 
     private void Start()
     {
@@ -14,12 +15,20 @@ public class SceneChanger : MonoBehaviour
 
     public static void OpenShopUI()
     {
-        SceneManager.LoadScene("Shop (UI)", LoadSceneMode.Additive);
+        if (SceneManager.GetActiveScene() != SceneManager.GetSceneByName("Shop (UI)") || !InsideShop)
+        {
+            SceneManager.LoadScene("Shop (UI)", LoadSceneMode.Additive);
+            InsideShop = true;
+        }
     }
     
     public static void CloseShopUI()
     {
-        SceneManager.UnloadSceneAsync("Shop (UI)");
+        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Shop (UI)") || InsideShop)
+        {
+            SceneManager.UnloadSceneAsync("Shop (UI)");
+            InsideShop = false;
+        }
     }
     
     // Keep in mind this unloads all other scenes.
@@ -37,7 +46,7 @@ public class SceneChanger : MonoBehaviour
     {
         if (sceneName == _test)
         {
-            Debug.Log("Ending Close Scene, due to test.");
+            Debug.Log("Ending Close Scene Coroutine, due to test.");
             yield break;
         }
         var asyncOperation = SceneManager.UnloadSceneAsync(sceneName);
