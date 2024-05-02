@@ -215,7 +215,11 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Slider Backgrounds Settings Menu_0: -149039362942584058
+      Slider Backgrounds Settings Menu_1: 2062376844359684377
+      Slider Backgrounds Settings Menu_2: 2391286942501237253
+      Slider Backgrounds Settings Menu_3: 5415261041836324841
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

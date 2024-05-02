@@ -143,7 +143,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Smaller Rectangular UI Box_0: 6224962858549935918
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

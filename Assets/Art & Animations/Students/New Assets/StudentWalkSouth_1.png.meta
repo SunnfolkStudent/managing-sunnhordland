@@ -143,7 +143,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      StudentWalkSouth_1_0: 8086309184730217645
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

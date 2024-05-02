@@ -839,7 +839,37 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Text Main Menu_0: 4970687398835658754
+      Text Main Menu_1: -7299499114758183887
+      Text Main Menu_10: 7846534376771297406
+      Text Main Menu_11: 4991790123092062475
+      Text Main Menu_12: -6467131248227119493
+      Text Main Menu_13: 8648631915136256067
+      Text Main Menu_14: 2869915714259929238
+      Text Main Menu_15: 4843390870188370806
+      Text Main Menu_16: 7970045353975547957
+      Text Main Menu_17: 5929102411634623365
+      Text Main Menu_18: 8392127846817320516
+      Text Main Menu_19: -537809518885255634
+      Text Main Menu_2: -3444087944749683582
+      Text Main Menu_20: -5078871188327945239
+      Text Main Menu_21: 4434476806963152335
+      Text Main Menu_22: -8837858397293329903
+      Text Main Menu_23: 1539282910926447754
+      Text Main Menu_24: 7552238608930152528
+      Text Main Menu_25: 3864211157209555866
+      Text Main Menu_26: 7911001587460501708
+      Text Main Menu_27: 7051496875530047446
+      Text Main Menu_28: -4286456210960978585
+      Text Main Menu_29: 939031420982002632
+      Text Main Menu_3: 3803395702495627091
+      Text Main Menu_4: -6893011634784938460
+      Text Main Menu_5: -3942041342723472171
+      Text Main Menu_6: 3263157777333433592
+      Text Main Menu_7: 1640769084095109540
+      Text Main Menu_8: -1739236053971743435
+      Text Main Menu_9: -5077121285619686935
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
