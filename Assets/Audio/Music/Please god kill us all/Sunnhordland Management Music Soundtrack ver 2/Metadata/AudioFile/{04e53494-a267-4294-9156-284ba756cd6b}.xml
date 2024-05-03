@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{04e53494-a267-4294-9156-284ba756cd6b}">
+		<property name="assetPath">
+			<value>While we wait 5-Zonk Pluck.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>208</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{4bfc9bd8-6444-41a0-a47d-a6cb7f3fab35}</destination>
+		</relationship>
+	</object>
+</objects>
