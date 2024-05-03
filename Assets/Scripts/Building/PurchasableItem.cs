@@ -1,11 +1,13 @@
 using System;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 using User_Interface__UI_;
 
 namespace Building
 {
+    [RequireComponent(typeof(Button))]
     public class PurchasableItem : MonoBehaviour
     {
         private UIController _uiController;

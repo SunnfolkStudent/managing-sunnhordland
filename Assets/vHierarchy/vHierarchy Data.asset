@@ -40,6 +40,7 @@ MonoBehaviour:
         - globalObjectIdString: GlobalObjectId_V1-2-21deba66faaeac04eab53aab7af6a0fb-1841949412-0
         - globalObjectIdString: GlobalObjectId_V1-2-21deba66faaeac04eab53aab7af6a0fb-333923601-0
         - globalObjectIdString: GlobalObjectId_V1-2-21deba66faaeac04eab53aab7af6a0fb-2292290650213202468-5159273440781721026
+        - globalObjectIdString: GlobalObjectId_V1-2-21deba66faaeac04eab53aab7af6a0fb-1671068815-0
         values:
         - colorIndex: 0
           iconNameOrGuid: LightmapParameters Icon
@@ -65,3 +66,5 @@ MonoBehaviour:
           iconNameOrGuid: Terrain Icon
         - colorIndex: 0
           iconNameOrGuid: BoxCollider Icon
+        - colorIndex: 6
+          iconNameOrGuid: ReflectionProbe Icon
