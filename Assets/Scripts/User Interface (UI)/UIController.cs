@@ -22,14 +22,14 @@ namespace User_Interface__UI_
             itemButtonList = new List<Button>();
             exitButtonList = new List<Button>();
 
-            foreach (var shopList in GameObject.FindGameObjectsWithTag("Shop"))
-            {
-                foreach (var uiElement in GetComponentsInChildren<RectTransform>())
-                {
-                    uiElement.gameObject.SetActive(true);
-                }
-                shopList.SetActive(true);
-            }
+            // foreach (var shopList in GameObject.FindGameObjectsWithTag("Shop"))
+            // {
+            //     foreach (var uiElement in shopList.GetComponentsInChildren<RectTransform>())
+            //     {
+            //         uiElement.gameObject.SetActive(true);
+            //     }
+            //     shopList.SetActive(true);
+            // }
             
             foreach (var item in gameObject.transform.GetComponentsInChildren<PurchasableItem>())
             {
@@ -58,17 +58,11 @@ namespace User_Interface__UI_
                });
                 exitButtonList.Add(exitButton); 
             }
-            
-            foreach (var shopList in GameObject.FindGameObjectsWithTag("Shop"))
-            {
-                foreach (var uiElement in GetComponentsInChildren<RectTransform>())
-                {
-                    uiElement.gameObject.SetActive(false);
-                }
-                shopList.SetActive(true);
-            }
 
-            gameObject.SetActive(true);
+            // foreach (var objectToBeInactive in GameObject.FindGameObjectsWithTag("ShopInactive"))
+            // {
+            //     objectToBeInactive.SetActive(false);
+            // }
         }
 
         private void ModifyOutline(Button button)
