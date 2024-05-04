@@ -12,24 +12,6 @@ public class SceneChanger : MonoBehaviour
     {
         CloseSceneCoroutine = StartCoroutine(CloseScene(_test));
     }
-
-    public static void OpenShopUI()
-    {
-        if (SceneManager.GetActiveScene() != SceneManager.GetSceneByName("Shop (UI)") || !InsideShop)
-        {
-            SceneManager.LoadScene("Shop (UI)", LoadSceneMode.Additive);
-            InsideShop = true;
-        }
-    }
-    
-    public static void CloseShopUI()
-    {
-        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Shop (UI)") || InsideShop)
-        {
-            SceneManager.UnloadSceneAsync("Shop (UI)");
-            InsideShop = false;
-        }
-    }
     
     // Keep in mind this unloads all other scenes.
     public static void SwitchToSingleScene(string sceneName)

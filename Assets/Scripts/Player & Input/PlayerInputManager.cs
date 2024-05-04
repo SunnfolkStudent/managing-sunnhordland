@@ -1,14 +1,14 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Building;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.UI;
 using UnityEngine.SceneManagement;
 
-namespace Building
+namespace Player___Input
 {
     public class PlayerInputManager : MonoBehaviour
     {
@@ -17,6 +17,8 @@ namespace Building
         public Action OnMouseHover;
         public Action<Vector2Int> OnMouseClick, OnMouseHold;
         public Action OnMouseUp;
+
+        private PlayerControls _playerControls;
         
         // private Vector2 _cameraMovementVector; 
         // public Vector2 cameraMovementVector => _cameraMovementVector;
@@ -33,7 +35,7 @@ namespace Building
         private List<TileOverlay> _rangeFinderTiles;
         private Camera _camera;
 
-        public Vector2 CameraMovementVector { get; private set; }
+        public Vector2 MoveCamera { get; private set; }
 
         [SerializeField] private int uiLayer;
         
@@ -52,7 +54,19 @@ namespace Building
                 return lastRaycastResult.gameObject != null && lastRaycastResult.gameObject.layer == uiLayer;
             }
         }
-        
+
+        private void Awake() => _playerControls = new PlayerControls();
+
+        public void OnEnable()
+        {
+            _playerControls.Enable();
+        }
+
+        public void OnDisable()
+        {
+            _playerControls.Disable();
+        }
+
         private void Start()
         {
             uiLayer = LayerMask.NameToLayer("UI"); 
@@ -64,7 +78,27 @@ namespace Building
             _path = new List<TileOverlay>();
             _rangeFinderTiles = new List<TileOverlay>();
         }
+
+        private void Update()
+        {
+            MoveCamera = _playerControls.InGame.CameraMovements.ReadValue<Vector2>();
+        }
         
+        private void PanCamera(Vector3 dragOrigin)
+        {
+            if (_playerControls.InGame.LeftClick.WasPressedThisFrame())
+            {
+                dragOrigin = _camera.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+            }
+     
+            if (_playerControls.InGame.LeftClick.IsPressed())
+            {
+                Vector3 difference = dragOrigin - _camera.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+                _camera.transform.position += difference;
+            }
+        }
+
+
         /*#region UI-stuff
  
         private void Update()
@@ -84,12 +118,12 @@ namespace Building
         
         //Returns 'true' if we touched or hovering on Unity UI element.
         //Returns 'true' if we touched or hovering on Unity UI element.
-        private bool IsPointerOverUIElement(List<RaycastResult> eventSystemRaysastResults)
+        private bool IsPointerOverUIElement(List<RaycastResult> eventSystemRaycastResults)
         {
-            for (int index = 0; index < eventSystemRaysastResults.Count; index++)
+            for (int index = 0; index < eventSystemRaycastResults.Count; index++)
             {
-                RaycastResult curRaysastResult = eventSystemRaysastResults[index];
-                if (curRaysastResult.gameObject.layer == uiLayer && curRaysastResult.gameObject == this.gameObject)
+                RaycastResult curRaycastResult = eventSystemRaycastResults[index];
+                if (curRaycastResult.gameObject.layer == uiLayer && curRaycastResult.gameObject == this.gameObject)
                     return true;
             }
             return false;
@@ -109,16 +143,6 @@ namespace Building
 
         void LateUpdate()
         {
-            if (Keyboard.current.sKey.wasPressedThisFrame)
-            {
-                SceneChanger.OpenShopUI();
-            }
-
-            if (Keyboard.current.xKey.wasPressedThisFrame)
-            {
-                SceneChanger.CloseShopUI();
-            }
-
             if (IsMouseOverUi)
             {
                 Debug.Log("mouse is detecting UI");
@@ -136,23 +160,13 @@ namespace Building
                     CheckClickDown();
                 }
             }
-            
-            CheckArrowInput();
-            
-            // CheckClickUpEvent();
-            // CheckClickHoldEvent();
-        }
-        
-        private void CheckArrowInput()
-        {
-            CameraMovementVector = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
         }
 
         private void CheckClickDown()
         {
             RaycastHit2D? hit = GetFocusedOnTile();
 
-            if (hit.HasValue)
+            if (hit.HasValue && hit.Value.collider.gameObject.GetComponent<TileOverlay>())
             {
                 TileOverlay tile = hit.Value.collider.gameObject.GetComponent<TileOverlay>();
                 cursor.transform.position = tile.transform.position;
@@ -226,6 +240,7 @@ namespace Building
             Vector3 mousePos = _camera.ScreenToWorldPoint(Input.mousePosition);
             // Changing to Vector2, cuz we 2D isometric, not 3D.
             Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
+            PanCamera(mousePos);
 
             // Using RaycastAll with a list, cuz it's more reliable in finding the right tile
             RaycastHit2D[] hits = Physics2D.RaycastAll(mousePos2D, Vector2.zero);

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using User_Interface__UI_;
+using PlayerInputManager = Player___Input.PlayerInputManager;
 
 namespace Building
 {

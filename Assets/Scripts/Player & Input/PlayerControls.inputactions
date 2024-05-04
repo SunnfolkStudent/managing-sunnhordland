@@ -2,17 +2,35 @@
     "name": "PlayerControls",
     "maps": [
         {
-            "name": "Ingame ",
+            "name": "In-Game",
             "id": "dfff4063-ee8a-4fc2-8e1b-796933a33daf",
             "actions": [
                 {
-                    "name": "Click",
-                    "type": "Value",
-                    "id": "6edc07f5-db72-4322-9882-bd620ab5989f",
+                    "name": "MouseMovement",
+                    "type": "PassThrough",
+                    "id": "db195d67-177a-47be-a99c-564b9acdd41f",
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": true
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Left-Click",
+                    "type": "Button",
+                    "id": "6edc07f5-db72-4322-9882-bd620ab5989f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Right-Click",
+                    "type": "Button",
+                    "id": "061f101a-b422-4c64-991d-f7246623d287",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 },
                 {
                     "name": "Camera Movements",
@@ -41,12 +59,12 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
-                    "action": "Click",
+                    "action": "Left-Click",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "2D Vector",
+                    "name": "WASD",
                     "id": "d8abaa27-8ac1-4a4e-ba89-149d66d14b3a",
                     "path": "2DVector",
                     "interactions": "",
@@ -101,7 +119,7 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "2D Vector",
+                    "name": "Arrow Keys",
                     "id": "e7da8f58-47f0-400c-91cc-0aa1f987f3ec",
                     "path": "2DVector",
                     "interactions": "",
@@ -163,6 +181,28 @@
                     "processors": "",
                     "groups": "Keyboard",
                     "action": "Escape",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b923561a-6910-49ba-8214-4a93e0e0add8",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Right-Click",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "289e02ce-0c51-4021-99c0-067d06ff36ea",
+                    "path": "<Mouse>/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "MouseMovement",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
