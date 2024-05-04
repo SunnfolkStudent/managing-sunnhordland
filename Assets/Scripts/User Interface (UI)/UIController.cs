@@ -21,9 +21,16 @@ namespace User_Interface__UI_
         {
             itemButtonList = new List<Button>();
             exitButtonList = new List<Button>();
-            
-            // TODO: Optional: Add onMouseHover code that helps showcase what items are available and nah.
 
+            foreach (var shopList in GameObject.FindGameObjectsWithTag("Shop"))
+            {
+                foreach (var uiElement in GetComponentsInChildren<RectTransform>())
+                {
+                    uiElement.gameObject.SetActive(true);
+                }
+                shopList.SetActive(true);
+            }
+            
             foreach (var item in gameObject.transform.GetComponentsInChildren<PurchasableItem>())
             {
                 var itemButton = item.itemButton;
@@ -52,7 +59,16 @@ namespace User_Interface__UI_
                 exitButtonList.Add(exitButton); 
             }
             
-            // var openShopButton = 
+            foreach (var shopList in GameObject.FindGameObjectsWithTag("Shop"))
+            {
+                foreach (var uiElement in GetComponentsInChildren<RectTransform>())
+                {
+                    uiElement.gameObject.SetActive(false);
+                }
+                shopList.SetActive(true);
+            }
+
+            gameObject.SetActive(true);
         }
 
         private void ModifyOutline(Button button)
