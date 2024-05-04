@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1450237134382579474}
   - component: {fileID: 4606289481939938735}
   m_Layer: 0
-  m_Name: arrow
+  m_Name: road
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1033766676993296678, guid: 61cca9f2aed1edc438fec21aee27a1d7, type: 3}
+  m_Sprite: {fileID: -7588986369684926346, guid: d7c4c4883e8182d47ad8cb9d15ccf35e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
@@ -244,17 +244,4 @@ MonoBehaviour:
   typeOfTheTile: 0
   previous: {fileID: 0}
   gridLocation: {x: 0, y: 0, z: 0}
-  arrows:
-  - {fileID: -1033766676993296678, guid: 61cca9f2aed1edc438fec21aee27a1d7, type: 3}
-  - {fileID: 7762582236204482122, guid: 61cca9f2aed1edc438fec21aee27a1d7, type: 3}
-  - {fileID: 8725979607429122002, guid: 61cca9f2aed1edc438fec21aee27a1d7, type: 3}
-  - {fileID: -7389299311667654144, guid: 61cca9f2aed1edc438fec21aee27a1d7, type: 3}
-  - {fileID: -4660600526088031369, guid: 61cca9f2aed1edc438fec21aee27a1d7, type: 3}
-  - {fileID: -8063395830634880408, guid: 185274c61486d6f46bdd26bea2ac5657, type: 3}
-  - {fileID: -1869602054923354706, guid: 61cca9f2aed1edc438fec21aee27a1d7, type: 3}
-  - {fileID: -3364982650870575014, guid: 185274c61486d6f46bdd26bea2ac5657, type: 3}
-  - {fileID: -9146782503041755686, guid: 61cca9f2aed1edc438fec21aee27a1d7, type: 3}
-  - {fileID: 2319643638384702094, guid: 61cca9f2aed1edc438fec21aee27a1d7, type: 3}
-  - {fileID: 5287939958834139383, guid: 61cca9f2aed1edc438fec21aee27a1d7, type: 3}
-  - {fileID: 3318904089994504119, guid: 61cca9f2aed1edc438fec21aee27a1d7, type: 3}
-  - {fileID: -1033766676993296678, guid: 185274c61486d6f46bdd26bea2ac5657, type: 3}
+  roads: []

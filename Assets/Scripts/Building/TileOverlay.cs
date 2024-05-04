@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Building
 {
@@ -25,7 +26,7 @@ namespace Building
         public Vector3Int gridLocation;
         public Vector2Int Grid2DLocation => new(gridLocation.x, gridLocation.y);
 
-        public List<Sprite> arrows;
+        public List<Sprite> roads;
 
         private void Update()
         {
@@ -52,7 +53,7 @@ namespace Building
             else
             {
                 GetComponentsInChildren<SpriteRenderer>()[1].color = new Color(1, 1, 1, 1);
-                GetComponentsInChildren<SpriteRenderer>()[1].sprite = arrows[(int)direction];
+                GetComponentsInChildren<SpriteRenderer>()[1].sprite = roads[(int)direction];
                 GetComponentsInChildren<SpriteRenderer>()[1].sortingOrder = gameObject.GetComponent<SpriteRenderer>().sortingOrder;
             }
         }
