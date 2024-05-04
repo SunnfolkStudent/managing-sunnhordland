@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: c2330291eea61b04781599f2fa3c5294
+guid: 5b94d37857f575344a876579bce020ad
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3855873119357745921
-    second: Rendered_Buene_0
+      213: -941715602958375721
+    second: Tunstova_isometric_done_0
+  - first:
+      213: -1183552557570658844
+    second: Tunstova_isometric_done_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -49,9 +52,9 @@ TextureImporter:
   spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 6
+  alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 637
+  spritePixelsToUnits: 638
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -113,13 +116,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Rendered_Buene_0
+      name: Tunstova_isometric_done_0
       rect:
         serializedVersion: 2
-        x: 179
-        y: 62
-        width: 3491
-        height: 2055
+        x: 990
+        y: 1441
+        width: 3644
+        height: 2415
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -127,8 +130,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ff444b5c3df2d7ac0800000000000000
-      internalID: -3855873119357745921
+      spriteID: 7d4293606aa5ee2f0800000000000000
+      internalID: -941715602958375721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tunstova_isometric_done_1
+      rect:
+        serializedVersion: 2
+        x: 2194
+        y: 1425
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4edeef8383d239fe0800000000000000
+      internalID: -1183552557570658844
       vertices: []
       indices: 
       edges: []
@@ -144,7 +168,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Dirt_block_for_tilemap_png_0: -832091027985372189
+      Tunstova_isometric_done_0: -941715602958375721
+      Tunstova_isometric_done_1: -1183552557570658844
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
