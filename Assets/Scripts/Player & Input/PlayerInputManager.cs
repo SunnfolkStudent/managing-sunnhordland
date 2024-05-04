@@ -305,7 +305,7 @@ namespace Player___Input
                 Vector2Int mousePos2DVector2Int = Vector2Int.RoundToInt(mousePos2D);
                 Debug.Log("MousePosV2 to Int: " + mousePos2DVector2Int);
                 
-                _rangeFinderTiles = _tileRangeFinder.GetSquareTilesInRange(
+                _rangeFinderTiles = _tileRangeFinder.GetTilesInRange(
                     new Vector2Int(mousePos2DVector2Int.x, mousePos2DVector2Int.y), movementRange);
                 
                 tile.ShowTile();
