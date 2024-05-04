@@ -11,7 +11,7 @@ namespace User_Interface__UI_
 
         private void Start()
         {
-            if (TryGetComponent<Button>(out Button button))
+            if (TryGetComponent(out Button button))
             {
                 exitButton = button;
             }

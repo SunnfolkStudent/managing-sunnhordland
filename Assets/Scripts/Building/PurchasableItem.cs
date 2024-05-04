@@ -13,7 +13,6 @@ namespace Building
         private UIController _uiController;
         private ShopManager _shopManager;
         [SerializeField] private BuildableObjectScrub itemScrub;
-
         public Button itemButton;
         
         [HideInInspector] internal int ProductIndex;
@@ -21,6 +20,7 @@ namespace Building
         private void Start()
         {
             ProductIndex = itemScrub.itemIndex;
+            gameObject.GetComponent<Image>().sprite = itemScrub.itemImage;
         }
 
         public bool CanWeBuyProduct()

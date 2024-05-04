@@ -115,8 +115,8 @@ namespace Building
         {
             var positionAndSize = new Dictionary<Vector2Int, TileOverlay>();
             var itemToBuild = itemScrubs[gameObjectToBuild];
-            var tileSizeX = itemToBuild.itemTileSizeX; 
-            var tileSizeY = itemToBuild.itemTileSizeY; 
+            var tileSizeX = 1; 
+            var tileSizeY = 1; 
             
             if (tileSizeX == 0)
             {

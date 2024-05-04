@@ -1,0 +1,669 @@
+fileFormatVersion: 2
+guid: d7c4c4883e8182d47ad8cb9d15ccf35e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6125873590123003838
+    second: Road blocks_0
+  - first:
+      213: -4702324530241736916
+    second: Road blocks_1
+  - first:
+      213: -990983545344865764
+    second: Road blocks_2
+  - first:
+      213: -7588986369684926346
+    second: Road blocks_3
+  - first:
+      213: 9022201568151581425
+    second: Road blocks_4
+  - first:
+      213: 4757884945208643029
+    second: Road blocks_5
+  - first:
+      213: -4135903316683253970
+    second: Road blocks_6
+  - first:
+      213: 3409026244176075339
+    second: Road blocks_7
+  - first:
+      213: -546552062178757944
+    second: Road blocks_8
+  - first:
+      213: -5063738076053577230
+    second: Road blocks_9
+  - first:
+      213: 100194470792450877
+    second: Road blocks_10
+  - first:
+      213: 5718371593728669188
+    second: Road blocks_11
+  - first:
+      213: -8899138689730911039
+    second: Road blocks_12
+  - first:
+      213: -4939556860388760746
+    second: Road blocks_13
+  - first:
+      213: -5271146899633869532
+    second: Road blocks_14
+  - first:
+      213: -2918779525746856391
+    second: Road blocks_15
+  - first:
+      213: 6109470891358177734
+    second: Road blocks_16
+  - first:
+      213: 8592791434140137506
+    second: Road blocks_17
+  - first:
+      213: -5383808411087079839
+    second: Road blocks_18
+  - first:
+      213: 8936377606895395027
+    second: Road blocks_19
+  - first:
+      213: -5986924621093034286
+    second: Road blocks_20
+  - first:
+      213: -3176098028482330451
+    second: Road blocks_21
+  - first:
+      213: 4903894970038813867
+    second: Road blocks_22
+  - first:
+      213: -5571243194750946127
+    second: Road blocks_23
+  - first:
+      213: 7067539406224615397
+    second: Road blocks_24
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 648
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Small Corner South
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 2728
+        width: 638
+        height: 738
+      alignment: 9
+      pivot: {x: 0.5, y: 0.75}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ebf7a3ee299730550800000000000000
+      internalID: 6125873590123003838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Big 4-Way North
+      rect:
+        serializedVersion: 2
+        x: 2115
+        y: 2730
+        width: 638
+        height: 738
+      alignment: 9
+      pivot: {x: 0.5, y: 0.75}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67016adda118ea690800000000000000
+      internalID: -7588986369684926346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Big Corner South
+      rect:
+        serializedVersion: 2
+        x: 2896
+        y: 2737
+        width: 638
+        height: 738
+      alignment: 9
+      pivot: {x: 0.5, y: 0.75}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f2b5a9468c453d70800000000000000
+      internalID: 9022201568151581425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Edge South-West
+      rect:
+        serializedVersion: 2
+        x: 3669
+        y: 2732
+        width: 638
+        height: 738
+      alignment: 9
+      pivot: {x: 0.5, y: 0.75}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5dd07593627670240800000000000000
+      internalID: 4757884945208643029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Full Road
+      rect:
+        serializedVersion: 2
+        x: 4434
+        y: 2727
+        width: 638
+        height: 738
+      alignment: 9
+      pivot: {x: 0.5, y: 0.75}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e271cbfa8d15a96c0800000000000000
+      internalID: -4135903316683253970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Small Corner North
+      rect:
+        serializedVersion: 2
+        x: 555
+        y: 1912
+        width: 638
+        height: 738
+      alignment: 9
+      pivot: {x: 0.5, y: 0.75}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4a591aae4b4f4f20800000000000000
+      internalID: 3409026244176075339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Small 4-Way
+      rect:
+        serializedVersion: 2
+        x: 1336
+        y: 1923
+        width: 638
+        height: 738
+      alignment: 9
+      pivot: {x: 0.5, y: 0.75}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c2f3929bc14a68f0800000000000000
+      internalID: -546552062178757944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Big 4-Way South
+      rect:
+        serializedVersion: 2
+        x: 2111
+        y: 1923
+        width: 638
+        height: 738
+      alignment: 9
+      pivot: {x: 0.5, y: 0.75}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d33da002756f36100800000000000000
+      internalID: 100194470792450877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Big Corner North
+      rect:
+        serializedVersion: 2
+        x: 2887
+        y: 1919
+        width: 638
+        height: 738
+      alignment: 9
+      pivot: {x: 0.5, y: 0.75}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 406b1e1daacbb5f40800000000000000
+      internalID: 5718371593728669188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Edge North-West
+      rect:
+        serializedVersion: 2
+        x: 3677
+        y: 1926
+        width: 638
+        height: 738
+      alignment: 9
+      pivot: {x: 0.5, y: 0.75}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c467a7e288ef7480800000000000000
+      internalID: -8899138689730911039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Small Corner West
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 1112
+        width: 638
+        height: 738
+      alignment: 9
+      pivot: {x: 0.5, y: 0.75}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6532fa4d43b237bb0800000000000000
+      internalID: -4939556860388760746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Road Straight Y
+      rect:
+        serializedVersion: 2
+        x: 1328
+        y: 1116
+        width: 638
+        height: 738
+      alignment: 9
+      pivot: {x: 0.5, y: 0.75}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42deb6092df19d6b0800000000000000
+      internalID: -5271146899633869532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Big 4-Way West
+      rect:
+        serializedVersion: 2
+        x: 2111
+        y: 1114
+        width: 638
+        height: 738
+      alignment: 9
+      pivot: {x: 0.5, y: 0.75}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93eec265c796e77d0800000000000000
+      internalID: -2918779525746856391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Big Corner East
+      rect:
+        serializedVersion: 2
+        x: 2882
+        y: 1119
+        width: 638
+        height: 738
+      alignment: 9
+      pivot: {x: 0.5, y: 0.75}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22831f4684abf3770800000000000000
+      internalID: 8592791434140137506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Edge North-East
+      rect:
+        serializedVersion: 2
+        x: 3663
+        y: 1118
+        width: 638
+        height: 738
+      alignment: 9
+      pivot: {x: 0.5, y: 0.75}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 166f46656ced845b0800000000000000
+      internalID: -5383808411087079839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Small Corner East
+      rect:
+        serializedVersion: 2
+        x: 561
+        y: 313
+        width: 638
+        height: 738
+      alignment: 9
+      pivot: {x: 0.5, y: 0.75}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d061c52614640c70800000000000000
+      internalID: 8936377606895395027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Road Straight X
+      rect:
+        serializedVersion: 2
+        x: 1336
+        y: 310
+        width: 638
+        height: 738
+      alignment: 9
+      pivot: {x: 0.5, y: 0.75}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d6a5b6f6cb2aeca0800000000000000
+      internalID: -5986924621093034286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Big 4-Way East
+      rect:
+        serializedVersion: 2
+        x: 2115
+        y: 308
+        width: 638
+        height: 738
+      alignment: 9
+      pivot: {x: 0.5, y: 0.75}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba40df84e722e0440800000000000000
+      internalID: 4903894970038813867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Big Corner West
+      rect:
+        serializedVersion: 2
+        x: 2893
+        y: 320
+        width: 638
+        height: 738
+      alignment: 9
+      pivot: {x: 0.5, y: 0.75}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b4be8305d7fea2b0800000000000000
+      internalID: -5571243194750946127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Edge South-East
+      rect:
+        serializedVersion: 2
+        x: 3671
+        y: 312
+        width: 638
+        height: 738
+      alignment: 9
+      pivot: {x: 0.5, y: 0.75}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e7e71005a1f41260800000000000000
+      internalID: 7067539406224615397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grass Tile
+      rect:
+        serializedVersion: 2
+        x: 1340
+        y: 2728
+        width: 638
+        height: 738
+      alignment: 9
+      pivot: {x: 0.5, y: 0.75}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e6df5aa082ab3f4baeb989c1316ee10
+      internalID: -1452338956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: f64de60479170b046bfd04058cbbf187
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Big 4-Way East: 4903894970038813867
+      Big 4-Way North: -7588986369684926346
+      Big 4-Way South: 100194470792450877
+      Big 4-Way West: -2918779525746856391
+      Big Corner East: 8592791434140137506
+      Big Corner North: 5718371593728669188
+      Big Corner South: 9022201568151581425
+      Big Corner West: -5571243194750946127
+      Edge North-East: -5383808411087079839
+      Edge North-West: -8899138689730911039
+      Edge South-East: 7067539406224615397
+      Edge South-West: 4757884945208643029
+      Full Road: -4135903316683253970
+      Grass Tile: -1452338956
+      Road Straight X: -5986924621093034286
+      Road Straight Y: -5271146899633869532
+      Road blocks_1: -4702324530241736916
+      Road blocks_16: 6109470891358177734
+      Road blocks_2: -990983545344865764
+      Road blocks_21: -3176098028482330451
+      Road blocks_9: -5063738076053577230
+      Small 4-Way: -546552062178757944
+      Small Corner East: 8936377606895395027
+      Small Corner North: 3409026244176075339
+      Small Corner South: 6125873590123003838
+      Small Corner West: -4939556860388760746
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

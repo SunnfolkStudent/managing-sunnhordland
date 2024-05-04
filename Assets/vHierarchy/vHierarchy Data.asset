@@ -57,6 +57,8 @@ MonoBehaviour:
         - globalObjectIdString: GlobalObjectId_V1-2-21deba66faaeac04eab53aab7af6a0fb-347969818015758631-1665193401429316974
         - globalObjectIdString: GlobalObjectId_V1-2-21deba66faaeac04eab53aab7af6a0fb-8684587192284517786-8670277105047568209
         - globalObjectIdString: GlobalObjectId_V1-2-21deba66faaeac04eab53aab7af6a0fb-1881332932-0
+        - globalObjectIdString: GlobalObjectId_V1-2-21deba66faaeac04eab53aab7af6a0fb-112941571094114449-0
+        - globalObjectIdString: GlobalObjectId_V1-2-21deba66faaeac04eab53aab7af6a0fb-9074708618820731301-8561879778131807621
         values:
         - colorIndex: 0
           iconNameOrGuid: LightmapParameters Icon
@@ -116,3 +118,7 @@ MonoBehaviour:
           iconNameOrGuid: Favorite
         - colorIndex: 0
           iconNameOrGuid: Favorite
+        - colorIndex: 9
+          iconNameOrGuid: Canvas Icon
+        - colorIndex: 2
+          iconNameOrGuid: 

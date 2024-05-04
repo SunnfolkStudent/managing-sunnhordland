@@ -8,9 +8,6 @@ namespace Building
         // Related to Object and TileMap
         public int itemIndex;
         public GameObject itemObject;
-        public GameObject itemObjectRotated;
-        public int itemTileSizeX;
-        public int itemTileSizeY;
         public TileType itemType;
         
         // Related to Shop
