@@ -41,6 +41,22 @@ MonoBehaviour:
         - globalObjectIdString: GlobalObjectId_V1-2-21deba66faaeac04eab53aab7af6a0fb-333923601-0
         - globalObjectIdString: GlobalObjectId_V1-2-21deba66faaeac04eab53aab7af6a0fb-2292290650213202468-5159273440781721026
         - globalObjectIdString: GlobalObjectId_V1-2-21deba66faaeac04eab53aab7af6a0fb-1671068815-0
+        - globalObjectIdString: GlobalObjectId_V1-2-21deba66faaeac04eab53aab7af6a0fb-281324842-0
+        - globalObjectIdString: GlobalObjectId_V1-2-21deba66faaeac04eab53aab7af6a0fb-5092856618567715861-8186511303847296715
+        - globalObjectIdString: GlobalObjectId_V1-2-21deba66faaeac04eab53aab7af6a0fb-3931375063297840782-2286224869314555139
+        - globalObjectIdString: GlobalObjectId_V1-2-21deba66faaeac04eab53aab7af6a0fb-3019940282498915691-6533782443904579081
+        - globalObjectIdString: GlobalObjectId_V1-2-21deba66faaeac04eab53aab7af6a0fb-2839959245863677003-1499574203390131647
+        - globalObjectIdString: GlobalObjectId_V1-2-21deba66faaeac04eab53aab7af6a0fb-8462357535359676204-8249431930767190892
+        - globalObjectIdString: GlobalObjectId_V1-2-21deba66faaeac04eab53aab7af6a0fb-3439608818371915144-3552592828850949574
+        - globalObjectIdString: GlobalObjectId_V1-2-21deba66faaeac04eab53aab7af6a0fb-8455350461147857409-2630876167603883276
+        - globalObjectIdString: GlobalObjectId_V1-2-21deba66faaeac04eab53aab7af6a0fb-7949594445971708375-8149457294344384408
+        - globalObjectIdString: GlobalObjectId_V1-2-21deba66faaeac04eab53aab7af6a0fb-2845093741730851564-1333577944384793780
+        - globalObjectIdString: GlobalObjectId_V1-2-21deba66faaeac04eab53aab7af6a0fb-6565559992096689582-6862956387896030576
+        - globalObjectIdString: GlobalObjectId_V1-2-21deba66faaeac04eab53aab7af6a0fb-6116169174653089315-3853769942729896968
+        - globalObjectIdString: GlobalObjectId_V1-2-21deba66faaeac04eab53aab7af6a0fb-2454136746797487454-3696179037837984419
+        - globalObjectIdString: GlobalObjectId_V1-2-21deba66faaeac04eab53aab7af6a0fb-347969818015758631-1665193401429316974
+        - globalObjectIdString: GlobalObjectId_V1-2-21deba66faaeac04eab53aab7af6a0fb-8684587192284517786-8670277105047568209
+        - globalObjectIdString: GlobalObjectId_V1-2-21deba66faaeac04eab53aab7af6a0fb-1881332932-0
         values:
         - colorIndex: 0
           iconNameOrGuid: LightmapParameters Icon
@@ -68,3 +84,35 @@ MonoBehaviour:
           iconNameOrGuid: BoxCollider Icon
         - colorIndex: 6
           iconNameOrGuid: ReflectionProbe Icon
+        - colorIndex: 8
+          iconNameOrGuid: Terrain Icon
+        - colorIndex: 0
+          iconNameOrGuid: Favorite
+        - colorIndex: 0
+          iconNameOrGuid: Favorite
+        - colorIndex: 0
+          iconNameOrGuid: Favorite
+        - colorIndex: 0
+          iconNameOrGuid: Favorite
+        - colorIndex: 0
+          iconNameOrGuid: Favorite
+        - colorIndex: 0
+          iconNameOrGuid: Favorite
+        - colorIndex: 0
+          iconNameOrGuid: Favorite
+        - colorIndex: 0
+          iconNameOrGuid: Favorite
+        - colorIndex: 0
+          iconNameOrGuid: Favorite
+        - colorIndex: 0
+          iconNameOrGuid: Favorite
+        - colorIndex: 0
+          iconNameOrGuid: Favorite
+        - colorIndex: 0
+          iconNameOrGuid: Favorite
+        - colorIndex: 0
+          iconNameOrGuid: Favorite
+        - colorIndex: 0
+          iconNameOrGuid: Favorite
+        - colorIndex: 0
+          iconNameOrGuid: Favorite
