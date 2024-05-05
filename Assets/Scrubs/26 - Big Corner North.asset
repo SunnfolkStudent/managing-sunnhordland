@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63d0ef74c60709443b100be4841a11f5, type: 3}
+  m_Name: 26 - Big Corner North
+  m_EditorClassIdentifier: 
+  itemIndex: 26
+  itemObject: {fileID: 5095706710667572949, guid: 727d27f29cf26e9488ad52e28f82f448, type: 3}
+  itemType: 1
+  itemName: Big Corner North
+  itemDescription: 
+  itemImage: {fileID: 5718371593728669188, guid: d7c4c4883e8182d47ad8cb9d15ccf35e, type: 3}
+  itemPrice: 0

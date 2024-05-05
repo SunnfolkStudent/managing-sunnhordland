@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63d0ef74c60709443b100be4841a11f5, type: 3}
+  m_Name: 35 - Road Straight South-West to North-East
+  m_EditorClassIdentifier: 
+  itemIndex: 35
+  itemObject: {fileID: 2651218046501970361, guid: 06dfcdd5bb989784ea9a4b2bfe4edf4c, type: 3}
+  itemType: 1
+  itemName: Road South-West to North-East
+  itemDescription: 
+  itemImage: {fileID: -5986924621093034286, guid: d7c4c4883e8182d47ad8cb9d15ccf35e, type: 3}
+  itemPrice: 0

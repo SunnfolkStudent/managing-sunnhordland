@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63d0ef74c60709443b100be4841a11f5, type: 3}
+  m_Name: 27 - Big Corner South
+  m_EditorClassIdentifier: 
+  itemIndex: 27
+  itemObject: {fileID: 1445711399546713170, guid: 21b8e7f135a33654c97ba30eb29e7baa, type: 3}
+  itemType: 1
+  itemName: Big Corner South
+  itemDescription: 
+  itemImage: {fileID: 9022201568151581425, guid: d7c4c4883e8182d47ad8cb9d15ccf35e, type: 3}
+  itemPrice: 0

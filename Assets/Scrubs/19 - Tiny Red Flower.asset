@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63d0ef74c60709443b100be4841a11f5, type: 3}
+  m_Name: 19 - Tiny Red Flower
+  m_EditorClassIdentifier: 
+  itemIndex: 19
+  itemObject: {fileID: 347969818015758631, guid: b2741a86d0ed92a46bb21eb70f6922cd, type: 3}
+  itemType: 3
+  itemName: Tiny Red Flower
+  itemDescription: 
+  itemImage: {fileID: 21300000, guid: f5c22d98f8442da44b8e31c4e1fff48c, type: 3}
+  itemPrice: 0
