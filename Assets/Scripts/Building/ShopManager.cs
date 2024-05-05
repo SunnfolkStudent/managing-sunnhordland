@@ -21,9 +21,13 @@ namespace Building
         [SerializeField] private List<BuildableObjectScrub> natureScrubs;
         
         // TODO: Create an automated method that fetches all buttons and puts them in a Dictionary.
+        
 
         private void Start()
         {
+            _uiController = FindFirstObjectByType<UIController>();
+            _buildManager = FindFirstObjectByType<BuildManager>();
+            
             foreach (var item in itemScrubs)
             {
                 var itemType = item.itemType;
@@ -65,11 +69,11 @@ namespace Building
 
         }
 
-        public void ProductSelectedForPlacing(int itemIndex)
+        public void ProductSelectedForPlacing(int selectedItemIndex)
         {
-            var selectedItem = itemScrubs[itemIndex];
+            var selectedItem = itemScrubs[selectedItemIndex].itemIndex;
+            _uiController.EnteringBuildMode(selectedItem);
         }
-        
 
         public void SellProduct(int itemIndex)
         {

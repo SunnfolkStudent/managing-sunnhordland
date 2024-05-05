@@ -143,11 +143,6 @@ namespace Player___Input
 
         void LateUpdate()
         {
-            if (IsMouseOverUi)
-            {
-                Debug.Log("mouse is detecting UI");
-            }
-
             if (!IsMouseOverUi && SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Benjamin Test 4"))
             {
                 if (BuildManager.InBuildMode)

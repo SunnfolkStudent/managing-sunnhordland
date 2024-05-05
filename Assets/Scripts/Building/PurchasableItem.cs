@@ -19,7 +19,9 @@ namespace Building
 
         private void Start()
         {
-            ProductIndex = itemScrub.itemIndex;
+            _shopManager = FindFirstObjectByType<ShopManager>();
+            ProductIndex = gameObject.GetComponent<PurchasableItem>().itemScrub.itemIndex;
+            Debug.Log("ProductIndex:" + ProductIndex);
             gameObject.GetComponent<Image>().sprite = itemScrub.itemImage;
         }
 
@@ -27,6 +29,7 @@ namespace Building
         {
             if (_shopManager.CanWeAffordObject(itemScrub.itemPrice) >= 0)
             {
+                Debug.Log(ProductIndex);
                 _shopManager.ProductSelectedForPlacing(ProductIndex);
                 return true;
             }
