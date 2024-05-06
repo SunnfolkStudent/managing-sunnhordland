@@ -6,7 +6,7 @@ namespace Building
 {
     public class TileRadiusFinder
     {
-        public List<TileOverlay> GetTilesInRange(Vector2Int location, int range)
+        public List<TileOverlay> GetTilesInRange(Vector2Int location, int range = 0)
         {
             var startingTile = GridManager.Instance.TileOverlayMap[location];
             var inRangeTiles = new List<TileOverlay>();

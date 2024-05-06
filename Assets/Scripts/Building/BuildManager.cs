@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
+using UnityEngine.UI;
 using User_Interface__UI_;
 using PlayerInputManager = Player___Input.PlayerInputManager;
 
@@ -9,7 +11,7 @@ namespace Building
 {
     public class BuildManager : MonoBehaviour
     {
-        [SerializeField] private BuildableObjectScrub[] itemScrubs;
+        private PurchasableItem[] _purchasableItems;
         
         [SerializeField] private List<BuildableObjectScrub> buildingScrubs;
         [SerializeField] private List<BuildableObjectScrub> roadScrubs;
@@ -20,31 +22,41 @@ namespace Building
         public PlayerInputManager playerInputManager;
         public UIController uiController;
         public GridManager gridManager;
+
+        private ExitButtonScript _exitShopButtonScript;
         
         private void Start()
         {
-            foreach (var item in itemScrubs)
+            _purchasableItems = FindObjectsByType<PurchasableItem>(FindObjectsInactive.Include, FindObjectsSortMode.None);
+            _exitShopButtonScript = FindFirstObjectByType<ExitButtonScript>(FindObjectsInactive.Include);
+            Debug.Log(_exitShopButtonScript.gameObject);
+            
+            foreach (var item in _purchasableItems)
             {
-                var itemType = item.itemType;
+                var itemType = item.itemScrub.itemType;
+                item.EnteringBuildMode += EnterBuildModeHandler;
+                
                 switch (itemType)
                 {
                     case TileType.Building:
-                        buildingScrubs.Add(item);
+                        buildingScrubs.Add(item.itemScrub);
                         continue;
                     case TileType.Nature:
-                        natureScrubs.Add(item);
+                        natureScrubs.Add(item.itemScrub);
                         continue;
                     case TileType.Road:
-                        roadScrubs.Add(item);
+                        roadScrubs.Add(item.itemScrub);
                         continue;
                     case TileType.Empty:
-                        Debug.LogWarning("Whoops..." + item + " is TileType.Empty!");
+                        Debug.LogWarning("Whoops..." + item.itemScrub + " is TileType.Empty!");
                         continue;
                     default:
-                        Debug.LogWarning("Whoops..." + item + " is not assigned a TileType!");
+                        Debug.LogWarning("Whoops..." + item.itemScrub + " is not assigned a TileType!");
                         continue;
                 }
             }
+            
+            
             
             uiController.EnteringBuildMode += EnterBuildModeHandler;
             uiController.ExitBuildMode += ExitBuildModeHandler;
@@ -53,11 +65,7 @@ namespace Building
         // Remove after properly implementing mouse on UI
         private void Update()
         {
-            if (Keyboard.current.bKey.wasPressedThisFrame && !InBuildMode)
-            {
-                EnterBuildModeHandler(2);
-            }
-            else if (Keyboard.current.bKey.wasPressedThisFrame && InBuildMode)
+            if (Keyboard.current.bKey.wasPressedThisFrame && InBuildMode)
             {
                 ExitBuildModeHandler();
             }
@@ -77,7 +85,8 @@ namespace Building
             ClearInputActions();
             InBuildMode = true;
             Debug.Log("Ready to place buildings.");
-            // TODO: Send gameObjectToBuild int to Mouse.
+            playerInputManager.UpdateBuildingPrefab(gameObjectToBuild);
+            _exitShopButtonScript.gameObject.GetComponent<Button>().onClick.Invoke();
         }
 
         /*private void RoadPlacementHandler()
@@ -107,7 +116,7 @@ namespace Building
                 // TODO: Add the ability to place prefabs.
             }
             
-            playerInputManager.GetItemObjectTileRange();
+            // playerInputManager.GetItemObjectTileRange();
             
             // TODO: Run check after each placement, for availability on tiles and shop.
         }
@@ -115,7 +124,7 @@ namespace Building
         public Dictionary<Vector2Int, TileOverlay> ItemAndTileSize(int gameObjectToBuild)
         {
             var positionAndSize = new Dictionary<Vector2Int, TileOverlay>();
-            var itemToBuild = itemScrubs[gameObjectToBuild];
+            // var itemToBuild = itemScrubs[gameObjectToBuild];
             var tileSizeX = 1; 
             var tileSizeY = 1; 
             

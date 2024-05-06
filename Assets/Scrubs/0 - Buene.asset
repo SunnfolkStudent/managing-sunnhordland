@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 63d0ef74c60709443b100be4841a11f5, type: 3}
-  m_Name: 3 - TestObject
+  m_Name: 0 - Buene
   m_EditorClassIdentifier: 
-  itemIndex: 3
-  itemObject: {fileID: 0}
+  itemIndex: 0
+  itemObject: {fileID: 7521085038599744277, guid: 471d3bb633261fe4f96129e8b2116631, type: 3}
   itemType: 2
-  itemName: 
-  itemDescription: 
-  itemImage: {fileID: 0}
-  itemPrice: 0
+  itemName: Buene
+  itemDescription: Veslebu, Midtbu og Storebu
+  itemImage: {fileID: 21300000, guid: c2330291eea61b04781599f2fa3c5294, type: 3}
+  itemPrice: 70

@@ -1,7 +1,5 @@
 using System;
 using UnityEngine;
-using UnityEngine.Rendering;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 using User_Interface__UI_;
 
@@ -12,25 +10,39 @@ namespace Building
     {
         private UIController _uiController;
         private ShopManager _shopManager;
-        [SerializeField] private BuildableObjectScrub itemScrub;
+        public BuildableObjectScrub itemScrub;
         public Button itemButton;
         
-        [HideInInspector] internal int ProductIndex;
+        public Action<int> EnteringBuildMode;
 
         private void Start()
         {
             _shopManager = FindFirstObjectByType<ShopManager>();
-            ProductIndex = gameObject.GetComponent<PurchasableItem>().itemScrub.itemIndex;
-            Debug.Log("ProductIndex:" + ProductIndex);
+            Debug.Log("ProductIndex:" + itemScrub.itemIndex);
             gameObject.GetComponent<Image>().sprite = itemScrub.itemImage;
+            itemButton = GetComponent<Button>();
+            itemButton.onClick.AddListener(TaskCuzButtonIsClicked);
+        }
+
+        private void Update()
+        {
+            if (itemButton.onClick == null)
+            {
+                Debug.Log("no clicking currently on the button");
+            }
+        }
+
+        public void TaskCuzButtonIsClicked()
+        {
+            EnteringBuildMode?.Invoke(itemScrub.itemIndex);
         }
 
         public bool CanWeBuyProduct()
         {
             if (_shopManager.CanWeAffordObject(itemScrub.itemPrice) >= 0)
             {
-                Debug.Log(ProductIndex);
-                _shopManager.ProductSelectedForPlacing(ProductIndex);
+                Debug.Log(itemScrub.itemIndex);
+                _shopManager.ProductSelectedForPlacing(itemScrub.itemIndex);
                 return true;
             }
             Debug.Log("Not enough, you're missing: " + -_shopManager.CanWeAffordObject(itemScrub.itemPrice) + " gratitude points!");

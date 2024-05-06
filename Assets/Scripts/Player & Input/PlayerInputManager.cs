@@ -25,6 +25,10 @@ namespace Player___Input
         
         public GameObject cursor;
         public GameObject buildingPrefab;
+
+        [SerializeField] private BuildableObjectScrub[] itemScrubs;
+        private int _selectedItemIndex;
+        
         public int movementRange = 3;
         private BuildingInfo _building;
 
@@ -77,6 +81,7 @@ namespace Player___Input
 
             _path = new List<TileOverlay>();
             _rangeFinderTiles = new List<TileOverlay>();
+            buildingPrefab = itemScrubs[_selectedItemIndex].itemObject;
         }
 
         private void Update()
@@ -191,7 +196,7 @@ namespace Player___Input
                 {
                     tile.ShowTile();
 
-                    if (tile.typeOfTheTile == TileType.Empty && BuildManager.InBuildMode)
+                    if (tile.typeOfTheTile is TileType.Empty or TileType.Nature or TileType.Road && BuildManager.InBuildMode)
                     {
                         _building = Instantiate(buildingPrefab).GetComponent<BuildingInfo>();
                         PositionBuildingOnLine(tile);
@@ -200,6 +205,12 @@ namespace Player___Input
                     }
                 }
             }
+        }
+
+        public void UpdateBuildingPrefab(int objectIndex)
+        {
+            _selectedItemIndex = objectIndex;
+            buildingPrefab = itemScrubs[_selectedItemIndex].itemObject;
         }
 
         /*private void MoveAlongPath()
@@ -248,7 +259,7 @@ namespace Player___Input
             return null;
         }
 
-        private void GetAdjacentTilesInRange()
+        /*private void GetAdjacentTilesInRange()
         {
             _rangeFinderTiles = _tileRangeFinder.GetTilesInRange(new Vector2Int(_building.standingOnTile.gridLocation.x, _building.standingOnTile.gridLocation.y), movementRange);
 
@@ -256,10 +267,10 @@ namespace Player___Input
             {
                 item.ShowTile();
             }
-        }
+        }*/
         
         // TODO: Fix the below code, it has an offset from the mousePos.
-        public void GetItemObjectTileRange()
+        /*public void GetItemObjectTileRange()
         {
             RaycastHit2D? hit = GetFocusedOnTile();
             if (hit.HasValue)
@@ -282,7 +293,7 @@ namespace Player___Input
             {
                 item.ShowTile();
             }
-        }
+        }*/
         
         private void CheckClickDownBuildMode()
         {
@@ -295,23 +306,42 @@ namespace Player___Input
                 cursor.gameObject.GetComponent<SpriteRenderer>().sortingOrder =
                     tile.transform.GetComponent<SpriteRenderer>().sortingOrder;
                 
-                var mousePos = cursor.transform.position;
+                if (_rangeFinderTiles.Contains(tile))
+                {
+                    _path = _destinationFinder.FindPath(_building.standingOnTile, tile, _rangeFinderTiles);
+
+                    foreach (var item in _rangeFinderTiles)
+                    {
+                        GridManager.Instance.TileOverlayMap[item.Grid2DLocation].SetSprite(ArrowChanger.ArrowDirection.None);
+                    }
+
+                    for (int i = 0; i < _path.Count; i++)
+                    {
+                        var previousTile = i > 0 ? _path[i - 1] : _building.standingOnTile;
+                        var futureTile = i < _path.Count - 1 ? _path[i + 1] : null;
+
+                        var arrow = _arrowChanger.TranslateDirection(previousTile, _path[i], futureTile);
+                        _path[i].SetSprite(arrow);
+                    }
+                }
+                
+                /*var mousePos = cursor.transform.position;
                 Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
-                Vector2Int mousePos2DVector2Int = Vector2Int.RoundToInt(mousePos2D);
+                Vector2Int mousePos2DVector2Int = Vector2Int.FloorToInt(mousePos2D);
                 Debug.Log("MousePosV2 to Int: " + mousePos2DVector2Int);
                 
                 _rangeFinderTiles = _tileRangeFinder.GetTilesInRange(
-                    new Vector2Int(mousePos2DVector2Int.x, mousePos2DVector2Int.y), movementRange);
-                
-                tile.ShowTile();
+                    new Vector2Int(mousePos2DVector2Int.x, mousePos2DVector2Int.y));*/
 
                 if (Input.GetMouseButtonDown(0))
                 {
-                    if (tile.typeOfTheTile == TileType.Empty && BuildManager.InBuildMode)
+                    tile.ShowTile();
+                    
+                    if (tile.typeOfTheTile is TileType.Empty or TileType.Nature or TileType.Road)
                     {
                         _building = Instantiate(buildingPrefab).GetComponent<BuildingInfo>();
                         PositionBuildingOnLine(tile);
-                        tile.gameObject.GetComponent<TileOverlay>().HideTile();
+                        // tile.gameObject.GetComponent<TileOverlay>().HideTile();
                         tile.typeOfTheTile = TileType.Building;
                     } 
                 }

@@ -36,7 +36,7 @@ namespace User_Interface__UI_
                 var itemButton = item.itemButton;
                 itemButton.onClick.AddListener(() =>
                 {
-                    var itemInt = item.ProductIndex;
+                    var itemInt = item.itemScrub.itemIndex;
                     if (item.CanWeBuyProduct())
                     {
                         ResetButtonColor();

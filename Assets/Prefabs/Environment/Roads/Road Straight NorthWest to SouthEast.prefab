@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8352967375013252926}
   - component: {fileID: 2595847843725813708}
+  - component: {fileID: -6143812437184898808}
   m_Layer: 0
   m_Name: Road Straight NorthWest to SouthEast
   m_TagString: Untagged
@@ -86,3 +87,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-6143812437184898808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2651218046501970361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4df75f36e018ac240a1fb23830a95ef1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  standingOnTile: {fileID: 0}

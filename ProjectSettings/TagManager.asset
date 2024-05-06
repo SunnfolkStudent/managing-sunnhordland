@@ -6,6 +6,7 @@ TagManager:
   tags:
   - CloseButton
   - ShopInactive
+  - ExitShopButton
   layers:
   - Default
   - TransparentFX
