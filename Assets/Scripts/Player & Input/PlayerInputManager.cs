@@ -39,9 +39,10 @@ namespace Player___Input
         private List<TileOverlay> _rangeFinderTiles;
         private Camera _camera;
 
-        public Vector2 MoveCamera { get; private set; }
 
-        [SerializeField] private int uiLayer;
+        private Pause[] _pauseMenu;
+
+        public Vector2 MoveCamera { get; private set; }
         
         private Dictionary<GameObject, int> _placedBuildings = new Dictionary<GameObject, int>();
         public static bool IsMouseOverUi
@@ -73,7 +74,6 @@ namespace Player___Input
 
         private void Start()
         {
-            uiLayer = LayerMask.NameToLayer("UI"); 
             _camera = Camera.main;
             _destinationFinder = new DestinationFinder();
             _tileRangeFinder = new TileRadiusFinder();
@@ -82,11 +82,18 @@ namespace Player___Input
             _path = new List<TileOverlay>();
             _rangeFinderTiles = new List<TileOverlay>();
             buildingPrefab = itemScrubs[_selectedItemIndex].itemObject;
+
+            _pauseMenu = FindObjectsByType<Pause>(FindObjectsInactive.Include, FindObjectsSortMode.None);
         }
 
         private void Update()
         {
             MoveCamera = _playerControls.InGame.CameraMovements.ReadValue<Vector2>();
+
+            if (Keyboard.current.escapeKey.wasPressedThisFrame)
+            {
+                _pauseMenu[0].gameObject.SetActive(true);
+            }
         }
         
         private void PanCamera(Vector3 dragOrigin)

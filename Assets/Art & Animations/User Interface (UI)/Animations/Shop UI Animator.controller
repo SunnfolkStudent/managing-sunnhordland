@@ -14,7 +14,7 @@ AnimatorStateMachine:
     m_Position: {x: 280, y: 20, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -681542832876862681}
-    m_Position: {x: 280, y: 90, z: 0}
+    m_Position: {x: 280, y: 120, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 148829098275530350}
     m_Position: {x: 315, y: 185, z: 0}
@@ -60,7 +60,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Canvas 1
+  m_Name: Shop UI Animator
   serializedVersion: 5
   m_AnimatorParameters: []
   m_AnimatorLayers:
