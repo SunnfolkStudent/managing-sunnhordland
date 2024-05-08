@@ -36,11 +36,6 @@ public class SceneChanger : MonoBehaviour
         // TODO: Send a signal to whatever called upon this method, that the scene is closed.
             // Use the static CloseSceneCoroutine, and check if it is null.
     }
-    
-    public void ChangeScene(string sceneName)
-    {
-        SceneManager.LoadScene(sceneName);
-    }
 
     public static void QuitGame()
     {
