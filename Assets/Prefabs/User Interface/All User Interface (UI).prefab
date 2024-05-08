@@ -14465,6 +14465,7 @@ GameObject:
   - component: {fileID: 349629603964547581}
   - component: {fileID: 7282068739604531408}
   - component: {fileID: 1371084800241451608}
+  - component: {fileID: 5268900577097248926}
   m_Layer: 5
   m_Name: Destroy Mode Button
   m_TagString: Untagged
@@ -14585,6 +14586,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &5268900577097248926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7091336940094749265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 147e97d7aabe1b243a666db76f642d06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyButton: {fileID: 1371084800241451608}
 --- !u!1 &7361349392237512250
 GameObject:
   m_ObjectHideFlags: 0

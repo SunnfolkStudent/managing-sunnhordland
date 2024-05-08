@@ -99,4 +99,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5a4d74a61ce81a4cb1c8f61f06a8820, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  crosshair: {fileID: 2800000, guid: 2cf5122808427c5449ca6c7268a4d654, type: 3}
+  customCursorDefault: {fileID: 2800000, guid: 2cf5122808427c5449ca6c7268a4d654, type: 3}
+  customCursorDestroyMode: {fileID: 2800000, guid: 8872f4833e02d30498ee1c909f3a2e02, type: 3}

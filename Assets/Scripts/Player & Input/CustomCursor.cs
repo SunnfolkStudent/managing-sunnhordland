@@ -9,8 +9,8 @@ namespace Player___Input
     {
         private DestroyModeScript _destroyModeScript;
         // You must set the cursor in the inspector.
-        public Texture2D customCursorDefault;
-        public Texture2D customCursorDestroyMode;
+        [SerializeField] private Texture2D customCursorDefault;
+        [SerializeField] private Texture2D customCursorDestroyMode;
 
         void Start()
         {
@@ -20,15 +20,20 @@ namespace Player___Input
      
             //Sets the cursor to the Crosshair sprite with given offset 
             //and automatic switching to hardware default if necessary
-            Cursor.SetCursor(customCursorDefault, default, CursorMode.Auto);
-            _destroyModeScript.EnteringDestroyMode += ChangeCursor;
-            
+            ChangeCursorToDefault();
+            _destroyModeScript.EnteringDestroyMode += ChangeCursorToDestroy;
+            _destroyModeScript.ExitDestroyMode += ChangeCursorToDefault;
+
         }
 
-        private void ChangeCursor()
+        private void ChangeCursorToDestroy()
         {
             Cursor.SetCursor(customCursorDestroyMode, default, CursorMode.Auto);
         }
-        
+
+        private void ChangeCursorToDefault()
+        {
+            Cursor.SetCursor(customCursorDefault, default, CursorMode.Auto);
+        }
     }
 }

@@ -516,7 +516,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -533.86, y: -207}
+  m_AnchoredPosition: {x: -460, y: -207}
   m_SizeDelta: {x: 389.711, y: 151.796}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &441812605
@@ -1397,8 +1397,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 97, y: -0.000011921}
-  m_SizeDelta: {x: 2766.786, y: 1009.992}
+  m_AnchoredPosition: {x: -26, y: 22}
+  m_SizeDelta: {x: 1298.3872, y: 868.0313}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1198418519
 MonoBehaviour:
@@ -1420,7 +1420,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f1f01b4c6c25f0847a042416d36f4beb, type: 3}
+  m_Sprite: {fileID: -4288164114721113361, guid: 1177850a359f5f34eb422747ea8b76a0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1472,7 +1472,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -533.86, y: -0.000010358}
+  m_AnchoredPosition: {x: -460, y: -0.000010358}
   m_SizeDelta: {x: 389.711, y: 151.796}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1259875483
@@ -1608,7 +1608,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -533.86, y: -104}
+  m_AnchoredPosition: {x: -460, y: -104}
   m_SizeDelta: {x: 389.711, y: 151.796}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1377235588
@@ -2424,7 +2424,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -533.86, y: 96.99998}
+  m_AnchoredPosition: {x: -460, y: 96.99998}
   m_SizeDelta: {x: 389.711, y: 151.796}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2126111460
