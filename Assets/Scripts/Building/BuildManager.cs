@@ -28,7 +28,10 @@ namespace Building
         {
             _purchasableItems = FindObjectsByType<PurchasableItem>(FindObjectsInactive.Include, FindObjectsSortMode.None);
             _exitShopButtonScript = FindFirstObjectByType<ExitButtonScript>(FindObjectsInactive.Include);
-            Debug.Log(_exitShopButtonScript.gameObject);
+            if (_exitShopButtonScript != null)
+            {
+                Debug.Log(_exitShopButtonScript.gameObject);
+            }
             
             foreach (var item in _purchasableItems)
             {

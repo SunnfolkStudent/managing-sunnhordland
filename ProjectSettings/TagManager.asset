@@ -8,6 +8,7 @@ TagManager:
   - ShopInactive
   - ExitShopButton
   - PauseMenu
+  - Settings
   layers:
   - Default
   - TransparentFX
