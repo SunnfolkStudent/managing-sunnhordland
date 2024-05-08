@@ -162,6 +162,10 @@ namespace Player___Input
                     //GetItemObjectTileRange();
                     CheckClickDownBuildMode();
                 }
+                else if (BuildManager.InDestroyMode)
+                {
+                    
+                }
                 else
                 {
                     CheckClickDown();

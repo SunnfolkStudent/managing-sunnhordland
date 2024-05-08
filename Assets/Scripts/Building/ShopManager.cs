@@ -9,7 +9,7 @@ namespace Building
     public class ShopManager : MonoBehaviour
     {
         private BuildManager _buildManager;
-        private UIController _uiController;
+        // private UIController _uiController;
         public static int ItemSelected;
         
         [SerializeField] private int currentGratitudePoints = 1000;
@@ -25,7 +25,7 @@ namespace Building
 
         private void Start()
         {
-            _uiController = FindFirstObjectByType<UIController>();
+            // _uiController = FindFirstObjectByType<UIController>();
             _buildManager = FindFirstObjectByType<BuildManager>();
             
             foreach (var item in itemScrubs)
@@ -72,7 +72,7 @@ namespace Building
         public void ProductSelectedForPlacing(int selectedItemIndex)
         {
             var selectedItem = itemScrubs[selectedItemIndex].itemIndex;
-            _uiController.EnteringBuildMode(selectedItem);
+            // _uiController.EnteringBuildMode(selectedItem);
         }
 
         public void SellProduct(int itemIndex)

@@ -9,9 +9,6 @@ namespace User_Interface__UI_
     public class UIController : MonoBehaviour
     {
         private ShopManager _shopManager;
-        
-        public Action<int> EnteringBuildMode; 
-        public Action ExitBuildMode;
 
         public Color outlineColor;
         [SerializeField] private List<Button> itemButtonList;
@@ -21,17 +18,8 @@ namespace User_Interface__UI_
         {
             itemButtonList = new List<Button>();
             exitButtonList = new List<Button>();
-
-            // foreach (var shopList in GameObject.FindGameObjectsWithTag("Shop"))
-            // {
-            //     foreach (var uiElement in shopList.GetComponentsInChildren<RectTransform>())
-            //     {
-            //         uiElement.gameObject.SetActive(true);
-            //     }
-            //     shopList.SetActive(true);
-            // }
             
-            foreach (var item in gameObject.transform.GetComponentsInChildren<PurchasableItem>())
+            /*foreach (var item in gameObject.transform.GetComponentsInChildren<PurchasableItem>())
             {
                 var itemButton = item.itemButton;
                 itemButton.onClick.AddListener(() =>
@@ -57,12 +45,7 @@ namespace User_Interface__UI_
                    ExitBuildMode?.Invoke();
                });
                 exitButtonList.Add(exitButton); 
-            }
-
-            // foreach (var objectToBeInactive in GameObject.FindGameObjectsWithTag("ShopInactive"))
-            // {
-            //     objectToBeInactive.SetActive(false);
-            // }
+            }*/
         }
 
         private void ModifyOutline(Button button)
@@ -78,11 +61,6 @@ namespace User_Interface__UI_
             {
                 button.GetComponent<Outline>().enabled = false;
             }
-        }
-
-        public void BuyItemFromShop()
-        {
-            
         }
     }
 }

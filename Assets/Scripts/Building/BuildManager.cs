@@ -18,13 +18,12 @@ namespace Building
         [SerializeField] private List<BuildableObjectScrub> natureScrubs;
         
         public static bool InBuildMode;
+        public static bool InDestroyMode;
         
         public PlayerInputManager playerInputManager;
-        public UIController uiController;
-        public GridManager gridManager;
-
         private ExitButtonScript _exitShopButtonScript;
         
+
         private void Start()
         {
             _purchasableItems = FindObjectsByType<PurchasableItem>(FindObjectsInactive.Include, FindObjectsSortMode.None);
@@ -55,16 +54,16 @@ namespace Building
                         continue;
                 }
             }
-            
-            
-            
-            uiController.EnteringBuildMode += EnterBuildModeHandler;
-            uiController.ExitBuildMode += ExitBuildModeHandler;
         }
 
         // Remove after properly implementing mouse on UI
         private void Update()
         {
+            if (InBuildMode && InDestroyMode)
+            {
+                InDestroyMode = false;
+            }
+            
             if (Keyboard.current.bKey.wasPressedThisFrame && InBuildMode)
             {
                 ExitBuildModeHandler();
@@ -79,7 +78,21 @@ namespace Building
             InBuildMode = false;
             Debug.Log("Leaving Build Mode.");
         }
-        
+
+        private void ExitDestroyModeHandler()
+        {
+            ClearInputActions();
+            InDestroyMode = true;
+            Debug.Log("Leaving Destroy Mode.");
+        }
+
+        private void EnterDestroyModeHandler()
+        {
+            ClearInputActions();
+            InDestroyMode = true;
+            Debug.Log("Ready to remove objects.");
+        }
+
         private void EnterBuildModeHandler(int gameObjectToBuild)
         {
             ClearInputActions();
@@ -111,13 +124,6 @@ namespace Building
         
         private void PlaceStructure(Vector2Int position)
         {
-            if (uiController)
-            {
-                // TODO: Add the ability to place prefabs.
-            }
-            
-            // playerInputManager.GetItemObjectTileRange();
-            
             // TODO: Run check after each placement, for availability on tiles and shop.
         }
 
@@ -150,16 +156,5 @@ namespace Building
             }
             return positionAndSize;
         }
-        
-        /*private void PlaceRoad(Vector2Int position)
-        {
-            
-        }
-
-        private void FinishPlacingRoad()
-        {
-        
-        }*/
-        
     }
 }

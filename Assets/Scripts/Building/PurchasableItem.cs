@@ -8,7 +8,7 @@ namespace Building
     [RequireComponent(typeof(Button))]
     public class PurchasableItem : MonoBehaviour
     {
-        private UIController _uiController;
+        // private UIController _uiController;
         private ShopManager _shopManager;
         public BuildableObjectScrub itemScrub;
         public Button itemButton;
@@ -24,15 +24,7 @@ namespace Building
             itemButton.onClick.AddListener(TaskCuzButtonIsClicked);
         }
 
-        private void Update()
-        {
-            if (itemButton.onClick == null)
-            {
-                Debug.Log("no clicking currently on the button");
-            }
-        }
-
-        public void TaskCuzButtonIsClicked()
+        private void TaskCuzButtonIsClicked()
         {
             EnteringBuildMode?.Invoke(itemScrub.itemIndex);
         }
