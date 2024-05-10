@@ -1,0 +1,249 @@
+fileFormatVersion: 2
+guid: 824c470418c7ff64b8d206b062863a5e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6125873590123003838
+    second: Road blocks_0
+  - first:
+      213: -4702324530241736916
+    second: Road blocks_1
+  - first:
+      213: -990983545344865764
+    second: Road blocks_2
+  - first:
+      213: -7588986369684926346
+    second: Road blocks_3
+  - first:
+      213: 9022201568151581425
+    second: Road blocks_4
+  - first:
+      213: 4757884945208643029
+    second: Road blocks_5
+  - first:
+      213: -4135903316683253970
+    second: Road blocks_6
+  - first:
+      213: 3409026244176075339
+    second: Road blocks_7
+  - first:
+      213: -546552062178757944
+    second: Road blocks_8
+  - first:
+      213: -5063738076053577230
+    second: Road blocks_9
+  - first:
+      213: 100194470792450877
+    second: Road blocks_10
+  - first:
+      213: 5718371593728669188
+    second: Road blocks_11
+  - first:
+      213: -8899138689730911039
+    second: Road blocks_12
+  - first:
+      213: -4939556860388760746
+    second: Road blocks_13
+  - first:
+      213: -5271146899633869532
+    second: Road blocks_14
+  - first:
+      213: -2918779525746856391
+    second: Road blocks_15
+  - first:
+      213: 6109470891358177734
+    second: Road blocks_16
+  - first:
+      213: 8592791434140137506
+    second: Road blocks_17
+  - first:
+      213: -5383808411087079839
+    second: Road blocks_18
+  - first:
+      213: 8936377606895395027
+    second: Road blocks_19
+  - first:
+      213: -5986924621093034286
+    second: Road blocks_20
+  - first:
+      213: -3176098028482330451
+    second: Road blocks_21
+  - first:
+      213: 4903894970038813867
+    second: Road blocks_22
+  - first:
+      213: -5571243194750946127
+    second: Road blocks_23
+  - first:
+      213: 7067539406224615397
+    second: Road blocks_24
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 648
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Grass Tile
+      rect:
+        serializedVersion: 2
+        x: 1340
+        y: 2728
+        width: 638
+        height: 738
+      alignment: 9
+      pivot: {x: 0.5, y: 0.75}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e6df5aa082ab3f4baeb989c1316ee10
+      internalID: -1452338956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: f64de60479170b046bfd04058cbbf187
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Big 4-Way East: 4903894970038813867
+      Big 4-Way North: -7588986369684926346
+      Big 4-Way South: 100194470792450877
+      Big 4-Way West: -2918779525746856391
+      Big Corner East: 8592791434140137506
+      Big Corner North: 5718371593728669188
+      Big Corner South: 9022201568151581425
+      Big Corner West: -5571243194750946127
+      Edge North-East: -5383808411087079839
+      Edge North-West: -8899138689730911039
+      Edge South-East: 7067539406224615397
+      Edge South-West: 4757884945208643029
+      Full Road: -4135903316683253970
+      Grass Tile: -1452338956
+      Road Straight X: -5986924621093034286
+      Road Straight Y: -5271146899633869532
+      Road blocks_1: -4702324530241736916
+      Road blocks_16: 6109470891358177734
+      Road blocks_2: -990983545344865764
+      Road blocks_21: -3176098028482330451
+      Road blocks_9: -5063738076053577230
+      Small 4-Way: -546552062178757944
+      Small Corner East: 8936377606895395027
+      Small Corner North: 3409026244176075339
+      Small Corner South: 6125873590123003838
+      Small Corner West: -4939556860388760746
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

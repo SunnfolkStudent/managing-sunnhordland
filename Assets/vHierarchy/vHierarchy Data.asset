@@ -16,6 +16,7 @@ MonoBehaviour:
     keys:
     - 65cfb77a3ed8b694e83395f235149508
     - 21deba66faaeac04eab53aab7af6a0fb
+    - 20e5063715602894e8b546bed0956723
     values:
     - goDatas_byGlobalId:
         keys:
@@ -128,3 +129,9 @@ MonoBehaviour:
           iconNameOrGuid: 
         - colorIndex: 5
           iconNameOrGuid: 
+    - goDatas_byGlobalId:
+        keys:
+        - globalObjectIdString: GlobalObjectId_V1-2-20e5063715602894e8b546bed0956723-7074828-0
+        values:
+        - colorIndex: 4
+          iconNameOrGuid: Terrain Icon
