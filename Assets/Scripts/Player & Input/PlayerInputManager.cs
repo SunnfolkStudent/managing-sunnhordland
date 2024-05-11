@@ -39,9 +39,6 @@ namespace Player___Input
         private List<TileOverlay> _rangeFinderTiles;
         private Camera _camera;
 
-
-        private Pause[] _pauseMenu;
-
         public Vector2 MoveCamera { get; private set; }
         
         private Dictionary<GameObject, int> _placedBuildings = new Dictionary<GameObject, int>();
@@ -83,7 +80,7 @@ namespace Player___Input
             _rangeFinderTiles = new List<TileOverlay>();
             buildingPrefab = itemScrubs[_selectedItemIndex].itemObject;
 
-            _pauseMenu = FindObjectsByType<Pause>(FindObjectsInactive.Include, FindObjectsSortMode.None);
+            // _pauseMenu = FindObjectsByType<Pause>(FindObjectsInactive.Include, FindObjectsSortMode.None);
         }
 
         private void Update()
@@ -92,18 +89,18 @@ namespace Player___Input
 
             if (Keyboard.current.escapeKey.wasPressedThisFrame)
             {
-                _pauseMenu[0].gameObject.SetActive(true);
+                // _pauseMenu[0].gameObject.SetActive(true);
             }
         }
         
         private void PanCamera(Vector3 dragOrigin)
         {
-            if (_playerControls.InGame.LeftClick.WasPressedThisFrame())
+            if (_playerControls.InGame.RightClick.WasPressedThisFrame())
             {
                 dragOrigin = _camera.ScreenToWorldPoint(Mouse.current.position.ReadValue());
             }
      
-            if (_playerControls.InGame.LeftClick.IsPressed())
+            if (_playerControls.InGame.RightClick.IsPressed())
             {
                 Vector3 difference = dragOrigin - _camera.ScreenToWorldPoint(Mouse.current.position.ReadValue());
                 _camera.transform.position += difference;
@@ -164,11 +161,36 @@ namespace Player___Input
                 }
                 else if (BuildManager.InDestroyMode)
                 {
-                    
+                    CheckClickDownDestroyMode();
                 }
                 else
                 {
                     CheckClickDown();
+                }
+            }
+        }
+
+        private void CheckClickDownDestroyMode()
+        {
+            RaycastHit2D? hit = GetFocusedOnTile();
+
+            if (hit.HasValue)
+            {
+                TileOverlay tile = hit.Value.collider.gameObject.GetComponent<TileOverlay>();
+                cursor.transform.position = tile.transform.position;
+                cursor.gameObject.GetComponent<SpriteRenderer>().sortingOrder =
+                    tile.transform.GetComponent<SpriteRenderer>().sortingOrder;
+
+                if (Input.GetMouseButtonDown(0))
+                {
+                    tile.ShowTile();
+                    
+                    if (tile.typeOfTheTile is TileType.Building or TileType.Nature or TileType.Road)
+                    {
+                        if (tile)
+                        // tile.gameObject.GetComponent<TileOverlay>().HideTile();
+                        tile.typeOfTheTile = TileType.Building;
+                    } 
                 }
             }
         }
@@ -248,6 +270,7 @@ namespace Player___Input
             _building.transform.position = new Vector3(position.x, position.y + 0.0001f, position.z);
             _building.GetComponent<SpriteRenderer>().sortingOrder = tile.GetComponent<SpriteRenderer>().sortingOrder;
             _building.standingOnTile = tile;
+            
         }
 
         // The "?" after RaycastHit2D means that RaycastHit2D is Nullable

@@ -28,11 +28,11 @@ namespace Building
         {
             if (BuildManager.InBuildMode || BuildManager.InDestroyMode)
             {
-                _buttonImage.color = new Color(default, default, default, 1);
+                _buttonImage.color = new Color(255, 255, 255, 1);
             }
             else
             {
-                _buttonImage.color = new Color(default, default, default, 0);
+                _buttonImage.color = new Color(255, 255, 255, 0);
             }
         }
 
